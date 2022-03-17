@@ -6,6 +6,8 @@ namespace DVGB07_viktlund104_Laboration4_Store
 	{
 		// Media implementations
 		public int Id { get; set; }
+		public int Quantity { get; set; }
+
 		public string Name { get; set; }
 		public double Price { get; set; }
 		
@@ -25,6 +27,11 @@ namespace DVGB07_viktlund104_Laboration4_Store
 		public Book(int id)
 		{
 			Id = id;
+		}
+
+		public override string ToString()
+		{
+			return $"Id: {Id}, Name: {Name}, Price: {Price}, Author: {Author}, Genre: {Genre}, Format: {Format}, Language: {Language}";
 		}
 	}
 }

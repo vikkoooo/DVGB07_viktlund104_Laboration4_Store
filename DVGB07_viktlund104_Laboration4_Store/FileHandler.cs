@@ -22,23 +22,23 @@ namespace DVGB07_viktlund104_Laboration4_Store
 			MovieList = new BindingList<Movie>();
 			
 			// Add dummy data during dev
-			BookList.Add(new Book() { Name = "Bello Gallico et Civili", Price = 449, Author = "Julius Caesar", Genre = "Historia", Format = "Inbunden" });
-			BookList.Add(new Book() { Name = "How to Read a Book", Price = 149, Author = "Mortimer J. Adler", Genre = "Kursliteratur", Format = "Pocket" });
-			BookList.Add(new Book() { Name = "Moby Dick", Price = 49, Author = "Herman Melville", Genre = "Historia", Format = "Pocket" });
-			BookList.Add(new Book() { Name = "Great Gatsby", Price = 79, Author = "F. Scott Fitzgerald", Genre = "Historia", Format = "E-Bok" });
-			BookList.Add(new Book() { Name = "House of Leaves", Price = 49, Author = "Mark Z. Danielewski", Genre = "Historia" });
-
-			GameList.Add(new Game() { Name = "Elden Ring", Price = 599, Platform = "Playstation 5" });
-			GameList.Add(new Game() { Name = "Demon's Souls", Price = 499, Platform = "Playstation 5" });
-			GameList.Add(new Game() { Name = "Microsoft Flight Simulator", Price = 499, Platform = "PC" });
-			GameList.Add(new Game() { Name = "Planescape Torment", Price = 99, Platform = "PC" });
-			GameList.Add(new Game() { Name = "Disco Elysium", Price = 399, Platform = "PC" });
-
-			MovieList.Add(new Movie() { Name = "Nyckeln till frihet", Price = 99, Format = "DVD", PlayingTime = 142 });
-			MovieList.Add(new Movie() { Name = "Gudfadern", Price = 99, Format = "DVD", PlayingTime = 152 });
-			MovieList.Add(new Movie() { Name = "Konungens återkomst", Price = 199, Format = "Blu-Ray", PlayingTime = 154 });
-			MovieList.Add(new Movie() { Name = "Pulp fiction", Price = 199, Format = "Blu-Ray" });
-			MovieList.Add(new Movie() { Name = "Schindlers list", Price = 99, Format = "DVD" });
+			// BookList.Add(new Book() { Name = "Bello Gallico et Civili", Price = 449, Author = "Julius Caesar", Genre = "Historia", Format = "Inbunden", Language = "Latin" });
+			// BookList.Add(new Book() { Name = "How to Read a Book", Price = 149, Author = "Mortimer J. Adler", Genre = "Kursliteratur", Format = "Pocket" });
+			// BookList.Add(new Book() { Name = "Moby Dick", Price = 49, Author = "Herman Melville", Genre = "Historia", Format = "Pocket" });
+			// BookList.Add(new Book() { Name = "Great Gatsby", Price = 79, Author = "F. Scott Fitzgerald", Genre = "Historia", Format = "E-Bok" });
+			// BookList.Add(new Book() { Name = "House of Leaves", Price = 49, Author = "Mark Z. Danielewski", Genre = "Historia" });
+			//
+			// GameList.Add(new Game() { Name = "Elden Ring", Price = 599, Platform = "Playstation 5" });
+			// GameList.Add(new Game() { Name = "Demon's Souls", Price = 499, Platform = "Playstation 5" });
+			// GameList.Add(new Game() { Name = "Microsoft Flight Simulator", Price = 499, Platform = "PC" });
+			// GameList.Add(new Game() { Name = "Planescape Torment", Price = 99, Platform = "PC" });
+			// GameList.Add(new Game() { Name = "Disco Elysium", Price = 399, Platform = "PC" });
+			//
+			// MovieList.Add(new Movie() { Name = "Nyckeln till frihet", Price = 99, Format = "DVD", PlayingTime = 142 });
+			// MovieList.Add(new Movie() { Name = "Gudfadern", Price = 99, Format = "DVD", PlayingTime = 152 });
+			// MovieList.Add(new Movie() { Name = "Konungens återkomst", Price = 199, Format = "Blu-Ray", PlayingTime = 154 });
+			// MovieList.Add(new Movie() { Name = "Pulp fiction", Price = 199, Format = "Blu-Ray" });
+			// MovieList.Add(new Movie() { Name = "Schindlers list", Price = 99, Format = "DVD" });
 		}
 
 		private void SaveBooks()
@@ -52,6 +52,10 @@ namespace DVGB07_viktlund104_Laboration4_Store
 				XmlElement id = doc.CreateElement("id");
 				id.InnerText = entry.Id.ToString();
 				elem.AppendChild(id);
+				
+				XmlElement quantity = doc.CreateElement("quantity");
+				quantity.InnerText = entry.Quantity.ToString();
+				elem.AppendChild(quantity);
 				
 				XmlElement name = doc.CreateElement("name");
 				name.InnerText = entry.Name;
@@ -73,6 +77,10 @@ namespace DVGB07_viktlund104_Laboration4_Store
 				format.InnerText = entry.Format;
 				elem.AppendChild(format); 
 				
+				XmlElement language = doc.CreateElement("language");
+				language.InnerText = entry.Language;
+				elem.AppendChild(language); 
+				
 				root.AppendChild(elem); // </book>
 			}
 			doc.AppendChild(root); // </BookDatabase>
@@ -90,6 +98,10 @@ namespace DVGB07_viktlund104_Laboration4_Store
 				XmlElement id = doc.CreateElement("id");
 				id.InnerText = entry.Id.ToString();
 				elem.AppendChild(id);
+				
+				XmlElement quantity = doc.CreateElement("quantity");
+				quantity.InnerText = entry.Quantity.ToString();
+				elem.AppendChild(quantity);
 				
 				XmlElement name = doc.CreateElement("name");
 				name.InnerText = entry.Name;
@@ -121,6 +133,10 @@ namespace DVGB07_viktlund104_Laboration4_Store
 				id.InnerText = entry.Id.ToString();
 				elem.AppendChild(id);
 				
+				XmlElement quantity = doc.CreateElement("quantity");
+				quantity.InnerText = entry.Quantity.ToString();
+				elem.AppendChild(quantity);
+				
 				XmlElement name = doc.CreateElement("name");
 				name.InnerText = entry.Name;
 				elem.AppendChild(name);
@@ -145,10 +161,15 @@ namespace DVGB07_viktlund104_Laboration4_Store
 
 		private void SaveIdGenerator()
 		{
-			File.WriteAllText(Environment.CurrentDirectory, IdGenerator.ToString());
+			XmlDocument doc = new XmlDocument();
+			XmlElement root = doc.CreateElement("idGenerator");
+
+			root.InnerText = IdGenerator.ToString();
+			doc.AppendChild(root);
+			doc.Save("IdGenerator.xml");
 		}
 
-		private void SaveFiles()
+		public void Save()
 		{
 			SaveBooks();
 			SaveGames();
@@ -170,6 +191,8 @@ namespace DVGB07_viktlund104_Laboration4_Store
 				{
 					if (node.Name == "id")
 						book.Id = int.Parse(node.InnerText);
+					if (node.Name == "quantity")
+						book.Quantity = int.Parse(node.InnerText);
 					if (node.Name == "name")
 						book.Name = node.InnerText;
 					if (node.Name == "price")
@@ -180,6 +203,8 @@ namespace DVGB07_viktlund104_Laboration4_Store
 						book.Genre = node.InnerText;
 					if (node.Name == "format")
 						book.Format = node.InnerText;
+					if (node.Name == "language")
+						book.Language = node.InnerText;
 				}
 				BookList.Add(book);
 			}
@@ -199,6 +224,8 @@ namespace DVGB07_viktlund104_Laboration4_Store
 				{
 					if (node.Name == "id")
 						game.Id = int.Parse(node.InnerText);
+					if (node.Name == "quantity")
+						game.Quantity = int.Parse(node.InnerText);
 					if (node.Name == "name")
 						game.Name = node.InnerText;
 					if (node.Name == "price")
@@ -224,6 +251,8 @@ namespace DVGB07_viktlund104_Laboration4_Store
 				{
 					if (node.Name == "id")
 						movie.Id = int.Parse(node.InnerText);
+					if (node.Name == "quantity")
+						movie.Quantity = int.Parse(node.InnerText);
 					if (node.Name == "name")
 						movie.Name = node.InnerText;
 					if (node.Name == "price")
@@ -239,11 +268,14 @@ namespace DVGB07_viktlund104_Laboration4_Store
 
 		private void LoadIdGenerator()
 		{
-			var input = File.ReadAllText(Environment.CurrentDirectory);
-			IdGenerator = int.Parse(input);
+			XmlDocument document = new XmlDocument();
+			document.Load("idGenerator.xml");
+
+			var root = document.FirstChild;
+			IdGenerator = int.Parse(root.InnerText);
 		}
 		
-		private void LoadFiles()
+		public void Load()
 		{
 			LoadBooks();
 			LoadGames();

@@ -13,7 +13,6 @@ namespace DVGB07_viktlund104_Laboration4_Store
 	public partial class MainForm : Form
 	{
 		private FileHandler db;
-		private BindingSource storeSource;
 		
 		public MainForm()
 		{
@@ -21,18 +20,14 @@ namespace DVGB07_viktlund104_Laboration4_Store
 			
 			// Initialize our FileHandling
 			db = new FileHandler();
-			//db.LoadFile();
-
-			storeSource = new BindingSource();
-//			storeSource.DataSource = d
-
-
+			//db.Save();
+			db.Load();
 		}
 
 		private void MainForm_Load(object sender, EventArgs e)
 		{
 			// Add StockControl to stock tab in MainForm
-			StockControl stock = new StockControl();
+			StockControl stock = new StockControl(db);
 			stockTab.Dock = DockStyle.Fill;
 			stockTab.Controls.Add(stock);
 			

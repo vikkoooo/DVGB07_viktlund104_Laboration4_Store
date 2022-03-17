@@ -43,7 +43,7 @@
 			this.mainTabControl.Location = new System.Drawing.Point(0, 0);
 			this.mainTabControl.Name = "mainTabControl";
 			this.mainTabControl.SelectedIndex = 0;
-			this.mainTabControl.Size = new System.Drawing.Size(800, 450);
+			this.mainTabControl.Size = new System.Drawing.Size(1020, 608);
 			this.mainTabControl.TabIndex = 0;
 			// 
 			// stockTab
@@ -51,7 +51,7 @@
 			this.stockTab.Location = new System.Drawing.Point(4, 22);
 			this.stockTab.Name = "stockTab";
 			this.stockTab.Padding = new System.Windows.Forms.Padding(3);
-			this.stockTab.Size = new System.Drawing.Size(792, 424);
+			this.stockTab.Size = new System.Drawing.Size(1012, 582);
 			this.stockTab.TabIndex = 0;
 			this.stockTab.Text = "Stock";
 			this.stockTab.UseVisualStyleBackColor = true;
@@ -61,7 +61,7 @@
 			this.salesTab.Location = new System.Drawing.Point(4, 22);
 			this.salesTab.Name = "salesTab";
 			this.salesTab.Padding = new System.Windows.Forms.Padding(3);
-			this.salesTab.Size = new System.Drawing.Size(792, 424);
+			this.salesTab.Size = new System.Drawing.Size(1012, 582);
 			this.salesTab.TabIndex = 1;
 			this.salesTab.Text = "Sales";
 			this.salesTab.UseVisualStyleBackColor = true;
@@ -70,7 +70,7 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(800, 450);
+			this.ClientSize = new System.Drawing.Size(1020, 608);
 			this.Controls.Add(this.mainTabControl);
 			this.Name = "MainForm";
 			this.Text = "Store";
