@@ -20,7 +20,6 @@ namespace DVGB07_viktlund104_Laboration4_Store
 			
 			// Initialize our FileHandling
 			db = new FileHandler();
-			//db.Save();
 			db.Load();
 		}
 
@@ -35,6 +34,11 @@ namespace DVGB07_viktlund104_Laboration4_Store
 			SalesControl sales = new SalesControl();
 			salesTab.Dock = DockStyle.Fill;
 			salesTab.Controls.Add(sales);
+		}
+
+		private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+		{
+			db.Save();
 		}
 	}
 }

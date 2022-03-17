@@ -2,8 +2,8 @@
 {
 	public interface IMedia
 	{
-		int Id { get; }
 		int Quantity { get; set; }
+		int Id { get; }
 		string Name { get; set; }
 		double Price { get; set; }
 

@@ -48,14 +48,14 @@ namespace DVGB07_viktlund104_Laboration4_Store
 			foreach (var entry in BookList)
 			{
 				XmlElement elem = doc.CreateElement("book"); // <book>
-
-				XmlElement id = doc.CreateElement("id");
-				id.InnerText = entry.Id.ToString();
-				elem.AppendChild(id);
 				
 				XmlElement quantity = doc.CreateElement("quantity");
 				quantity.InnerText = entry.Quantity.ToString();
 				elem.AppendChild(quantity);
+
+				XmlElement id = doc.CreateElement("id");
+				id.InnerText = entry.Id.ToString();
+				elem.AppendChild(id);
 				
 				XmlElement name = doc.CreateElement("name");
 				name.InnerText = entry.Name;
@@ -95,14 +95,14 @@ namespace DVGB07_viktlund104_Laboration4_Store
 			{
 				XmlElement elem = doc.CreateElement("game"); 
 				
-				XmlElement id = doc.CreateElement("id");
-				id.InnerText = entry.Id.ToString();
-				elem.AppendChild(id);
-				
 				XmlElement quantity = doc.CreateElement("quantity");
 				quantity.InnerText = entry.Quantity.ToString();
 				elem.AppendChild(quantity);
 				
+				XmlElement id = doc.CreateElement("id");
+				id.InnerText = entry.Id.ToString();
+				elem.AppendChild(id);
+
 				XmlElement name = doc.CreateElement("name");
 				name.InnerText = entry.Name;
 				elem.AppendChild(name);
@@ -129,13 +129,13 @@ namespace DVGB07_viktlund104_Laboration4_Store
 			{
 				XmlElement elem = doc.CreateElement("movie"); 
 				
-				XmlElement id = doc.CreateElement("id");
-				id.InnerText = entry.Id.ToString();
-				elem.AppendChild(id);
-				
 				XmlElement quantity = doc.CreateElement("quantity");
 				quantity.InnerText = entry.Quantity.ToString();
 				elem.AppendChild(quantity);
+				
+				XmlElement id = doc.CreateElement("id");
+				id.InnerText = entry.Id.ToString();
+				elem.AppendChild(id);
 				
 				XmlElement name = doc.CreateElement("name");
 				name.InnerText = entry.Name;
@@ -189,10 +189,10 @@ namespace DVGB07_viktlund104_Laboration4_Store
 				
 				foreach (XmlElement node in entry.ChildNodes)
 				{
-					if (node.Name == "id")
-						book.Id = int.Parse(node.InnerText);
 					if (node.Name == "quantity")
 						book.Quantity = int.Parse(node.InnerText);
+					if (node.Name == "id")
+						book.Id = int.Parse(node.InnerText);
 					if (node.Name == "name")
 						book.Name = node.InnerText;
 					if (node.Name == "price")
@@ -222,10 +222,10 @@ namespace DVGB07_viktlund104_Laboration4_Store
 				
 				foreach (XmlElement node in entry.ChildNodes)
 				{
-					if (node.Name == "id")
-						game.Id = int.Parse(node.InnerText);
 					if (node.Name == "quantity")
 						game.Quantity = int.Parse(node.InnerText);
+					if (node.Name == "id")
+						game.Id = int.Parse(node.InnerText);
 					if (node.Name == "name")
 						game.Name = node.InnerText;
 					if (node.Name == "price")
@@ -249,10 +249,10 @@ namespace DVGB07_viktlund104_Laboration4_Store
 				
 				foreach (XmlElement node in entry.ChildNodes)
 				{
-					if (node.Name == "id")
-						movie.Id = int.Parse(node.InnerText);
 					if (node.Name == "quantity")
 						movie.Quantity = int.Parse(node.InnerText);
+					if (node.Name == "id")
+						movie.Id = int.Parse(node.InnerText);
 					if (node.Name == "name")
 						movie.Name = node.InnerText;
 					if (node.Name == "price")

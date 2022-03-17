@@ -5,8 +5,8 @@ namespace DVGB07_viktlund104_Laboration4_Store
 	public class Book : IMedia
 	{
 		// Media implementations
-		public int Id { get; set; }
 		public int Quantity { get; set; }
+		public int Id { get; set; }
 
 		public string Name { get; set; }
 		public double Price { get; set; }
@@ -16,7 +16,7 @@ namespace DVGB07_viktlund104_Laboration4_Store
 		public string Genre { get; set; }
 		public string Format { get; set; }
 		public string Language { get; set; }
-
+		
 		public Book()
 		{
 			// Get unique ID
