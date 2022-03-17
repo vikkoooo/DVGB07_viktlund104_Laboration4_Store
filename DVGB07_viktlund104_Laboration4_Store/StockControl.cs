@@ -78,6 +78,8 @@ namespace DVGB07_viktlund104_Laboration4_Store
 			var editBookForm = new EditBookForm(selectedBook);
 			editBookForm.StartPosition = FormStartPosition.CenterParent;
 			editBookForm.ShowDialog();
+			
+			bookSource.ResetCurrentItem(); //update ui
 		}
 
 		private void deleteBookButton_Click(object sender, EventArgs e)
@@ -107,6 +109,8 @@ namespace DVGB07_viktlund104_Laboration4_Store
 			var editGameForm = new EditGameForm(selectedGame);
 			editGameForm.StartPosition = FormStartPosition.CenterParent;
 			editGameForm.ShowDialog();
+			
+			gameSource.ResetCurrentItem();
 		}
 
 		private void deleteGameButton_Click(object sender, EventArgs e)
@@ -119,6 +123,36 @@ namespace DVGB07_viktlund104_Laboration4_Store
 			}		
 		}
 		
-		
+		private void newMovieButton_Click(object sender, EventArgs e)
+		{
+			var newMovieForm = new NewMovieForm();
+			newMovieForm.StartPosition = FormStartPosition.CenterParent;
+			
+			var dialogResult = newMovieForm.ShowDialog();
+			if (dialogResult == DialogResult.OK)
+			{
+				movieSource.Add(newMovieForm.Movie);
+			}
+			
+		}
+
+		private void editMovieButton_Click(object sender, EventArgs e)
+		{
+			var editMovieForm = new EditMovieForm(selectedMovie);
+			editMovieForm.StartPosition = FormStartPosition.CenterParent;
+			editMovieForm.ShowDialog();
+			
+			movieSource.ResetCurrentItem();		
+		}
+
+		private void deleteMovieButton_Click(object sender, EventArgs e)
+		{
+			var result = MessageBox.Show("Are your sure?", "Remove Movie", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+			if (result == DialogResult.Yes)
+			{
+				movieSource.Remove(selectedMovie);
+			}
+		}
 	}
 }

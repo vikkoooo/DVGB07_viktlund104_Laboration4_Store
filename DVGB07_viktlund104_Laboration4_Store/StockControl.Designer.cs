@@ -191,6 +191,7 @@ namespace DVGB07_viktlund104_Laboration4_Store
 			this.newMovieButton.TabIndex = 2;
 			this.newMovieButton.Text = "New Movie";
 			this.newMovieButton.UseVisualStyleBackColor = true;
+			this.newMovieButton.Click += new System.EventHandler(this.newMovieButton_Click);
 			// 
 			// deleteMovieButton
 			// 
@@ -200,6 +201,7 @@ namespace DVGB07_viktlund104_Laboration4_Store
 			this.deleteMovieButton.TabIndex = 2;
 			this.deleteMovieButton.Text = "Delete Selected Movie";
 			this.deleteMovieButton.UseVisualStyleBackColor = true;
+			this.deleteMovieButton.Click += new System.EventHandler(this.deleteMovieButton_Click);
 			// 
 			// editMovieButton
 			// 
@@ -209,6 +211,7 @@ namespace DVGB07_viktlund104_Laboration4_Store
 			this.editMovieButton.TabIndex = 2;
 			this.editMovieButton.Text = "Edit Selected Movie";
 			this.editMovieButton.UseVisualStyleBackColor = true;
+			this.editMovieButton.Click += new System.EventHandler(this.editMovieButton_Click);
 			// 
 			// StockControl
 			// 
