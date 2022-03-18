@@ -48,9 +48,14 @@ namespace DVGB07_viktlund104_Laboration4_Store
 			this.shoppingCartListBox = new System.Windows.Forms.ListBox();
 			this.currentPriceLabel = new System.Windows.Forms.Label();
 			this.emptyShoppingCartButton = new System.Windows.Forms.Button();
+			this.salesSplitContainer = new System.Windows.Forms.SplitContainer();
 			((System.ComponentModel.ISupportInitialize) (this.movieDataGridView)).BeginInit();
 			((System.ComponentModel.ISupportInitialize) (this.gameDataGridView)).BeginInit();
 			((System.ComponentModel.ISupportInitialize) (this.bookDataGridView)).BeginInit();
+			((System.ComponentModel.ISupportInitialize) (this.salesSplitContainer)).BeginInit();
+			this.salesSplitContainer.Panel1.SuspendLayout();
+			this.salesSplitContainer.Panel2.SuspendLayout();
+			this.salesSplitContainer.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// moviesLabel
@@ -127,7 +132,7 @@ namespace DVGB07_viktlund104_Laboration4_Store
 			// 
 			// finalizePurchaseButton
 			// 
-			this.finalizePurchaseButton.Location = new System.Drawing.Point(926, 309);
+			this.finalizePurchaseButton.Location = new System.Drawing.Point(57, 309);
 			this.finalizePurchaseButton.Name = "finalizePurchaseButton";
 			this.finalizePurchaseButton.Size = new System.Drawing.Size(100, 23);
 			this.finalizePurchaseButton.TabIndex = 5;
@@ -137,7 +142,7 @@ namespace DVGB07_viktlund104_Laboration4_Store
 			// 
 			// addProductShoppingCartButton
 			// 
-			this.addProductShoppingCartButton.Location = new System.Drawing.Point(873, 107);
+			this.addProductShoppingCartButton.Location = new System.Drawing.Point(4, 107);
 			this.addProductShoppingCartButton.Name = "addProductShoppingCartButton";
 			this.addProductShoppingCartButton.Size = new System.Drawing.Size(75, 23);
 			this.addProductShoppingCartButton.TabIndex = 3;
@@ -147,7 +152,7 @@ namespace DVGB07_viktlund104_Laboration4_Store
 			// 
 			// cancelProductShoppingCartButton
 			// 
-			this.cancelProductShoppingCartButton.Location = new System.Drawing.Point(951, 107);
+			this.cancelProductShoppingCartButton.Location = new System.Drawing.Point(82, 107);
 			this.cancelProductShoppingCartButton.Name = "cancelProductShoppingCartButton";
 			this.cancelProductShoppingCartButton.Size = new System.Drawing.Size(75, 23);
 			this.cancelProductShoppingCartButton.TabIndex = 4;
@@ -157,21 +162,22 @@ namespace DVGB07_viktlund104_Laboration4_Store
 			// 
 			// quantityShoppingCartTextBox
 			// 
-			this.quantityShoppingCartTextBox.Location = new System.Drawing.Point(926, 81);
+			this.quantityShoppingCartTextBox.Location = new System.Drawing.Point(57, 81);
 			this.quantityShoppingCartTextBox.Name = "quantityShoppingCartTextBox";
 			this.quantityShoppingCartTextBox.Size = new System.Drawing.Size(100, 20);
 			this.quantityShoppingCartTextBox.TabIndex = 2;
 			// 
 			// itemIdShoppingCartTextBox
 			// 
-			this.itemIdShoppingCartTextBox.Location = new System.Drawing.Point(926, 55);
+			this.itemIdShoppingCartTextBox.Anchor = ((System.Windows.Forms.AnchorStyles) (((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
+			this.itemIdShoppingCartTextBox.Location = new System.Drawing.Point(57, 55);
 			this.itemIdShoppingCartTextBox.Name = "itemIdShoppingCartTextBox";
 			this.itemIdShoppingCartTextBox.Size = new System.Drawing.Size(100, 20);
 			this.itemIdShoppingCartTextBox.TabIndex = 1;
 			// 
 			// quantityShoppingCartLabel
 			// 
-			this.quantityShoppingCartLabel.Location = new System.Drawing.Point(872, 85);
+			this.quantityShoppingCartLabel.Location = new System.Drawing.Point(3, 85);
 			this.quantityShoppingCartLabel.Name = "quantityShoppingCartLabel";
 			this.quantityShoppingCartLabel.Size = new System.Drawing.Size(48, 17);
 			this.quantityShoppingCartLabel.TabIndex = 10;
@@ -179,7 +185,7 @@ namespace DVGB07_viktlund104_Laboration4_Store
 			// 
 			// itemIdShoppingCartLabel
 			// 
-			this.itemIdShoppingCartLabel.Location = new System.Drawing.Point(872, 58);
+			this.itemIdShoppingCartLabel.Location = new System.Drawing.Point(3, 58);
 			this.itemIdShoppingCartLabel.Name = "itemIdShoppingCartLabel";
 			this.itemIdShoppingCartLabel.Size = new System.Drawing.Size(48, 17);
 			this.itemIdShoppingCartLabel.TabIndex = 11;
@@ -188,7 +194,7 @@ namespace DVGB07_viktlund104_Laboration4_Store
 			// shoppingCartLabel
 			// 
 			this.shoppingCartLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-			this.shoppingCartLabel.Location = new System.Drawing.Point(872, 26);
+			this.shoppingCartLabel.Location = new System.Drawing.Point(3, 26);
 			this.shoppingCartLabel.Name = "shoppingCartLabel";
 			this.shoppingCartLabel.Size = new System.Drawing.Size(154, 17);
 			this.shoppingCartLabel.TabIndex = 12;
@@ -197,7 +203,7 @@ namespace DVGB07_viktlund104_Laboration4_Store
 			// shoppingCartListBox
 			// 
 			this.shoppingCartListBox.FormattingEnabled = true;
-			this.shoppingCartListBox.Location = new System.Drawing.Point(874, 182);
+			this.shoppingCartListBox.Location = new System.Drawing.Point(5, 182);
 			this.shoppingCartListBox.Name = "shoppingCartListBox";
 			this.shoppingCartListBox.Size = new System.Drawing.Size(152, 121);
 			this.shoppingCartListBox.TabIndex = 99;
@@ -205,14 +211,14 @@ namespace DVGB07_viktlund104_Laboration4_Store
 			// 
 			// currentPriceLabel
 			// 
-			this.currentPriceLabel.Location = new System.Drawing.Point(874, 314);
+			this.currentPriceLabel.Location = new System.Drawing.Point(5, 314);
 			this.currentPriceLabel.Name = "currentPriceLabel";
 			this.currentPriceLabel.Size = new System.Drawing.Size(46, 23);
 			this.currentPriceLabel.TabIndex = 18;
 			// 
 			// emptyShoppingCartButton
 			// 
-			this.emptyShoppingCartButton.Location = new System.Drawing.Point(926, 338);
+			this.emptyShoppingCartButton.Location = new System.Drawing.Point(57, 338);
 			this.emptyShoppingCartButton.Name = "emptyShoppingCartButton";
 			this.emptyShoppingCartButton.Size = new System.Drawing.Size(100, 23);
 			this.emptyShoppingCartButton.TabIndex = 6;
@@ -220,35 +226,57 @@ namespace DVGB07_viktlund104_Laboration4_Store
 			this.emptyShoppingCartButton.UseVisualStyleBackColor = true;
 			this.emptyShoppingCartButton.Click += new System.EventHandler(this.emptyShoppingCartButton_Click);
 			// 
+			// salesSplitContainer
+			// 
+			this.salesSplitContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.salesSplitContainer.Location = new System.Drawing.Point(0, 0);
+			this.salesSplitContainer.Name = "salesSplitContainer";
+			// 
+			// salesSplitContainer.Panel1
+			// 
+			this.salesSplitContainer.Panel1.Controls.Add(this.booksLabel);
+			this.salesSplitContainer.Panel1.Controls.Add(this.bookDataGridView);
+			this.salesSplitContainer.Panel1.Controls.Add(this.gameDataGridView);
+			this.salesSplitContainer.Panel1.Controls.Add(this.movieDataGridView);
+			this.salesSplitContainer.Panel1.Controls.Add(this.gamesLabel);
+			this.salesSplitContainer.Panel1.Controls.Add(this.moviesLabel);
+			// 
+			// salesSplitContainer.Panel2
+			// 
+			this.salesSplitContainer.Panel2.Controls.Add(this.shoppingCartLabel);
+			this.salesSplitContainer.Panel2.Controls.Add(this.currentPriceLabel);
+			this.salesSplitContainer.Panel2.Controls.Add(this.shoppingCartListBox);
+			this.salesSplitContainer.Panel2.Controls.Add(this.emptyShoppingCartButton);
+			this.salesSplitContainer.Panel2.Controls.Add(this.itemIdShoppingCartLabel);
+			this.salesSplitContainer.Panel2.Controls.Add(this.finalizePurchaseButton);
+			this.salesSplitContainer.Panel2.Controls.Add(this.quantityShoppingCartLabel);
+			this.salesSplitContainer.Panel2.Controls.Add(this.addProductShoppingCartButton);
+			this.salesSplitContainer.Panel2.Controls.Add(this.itemIdShoppingCartTextBox);
+			this.salesSplitContainer.Panel2.Controls.Add(this.cancelProductShoppingCartButton);
+			this.salesSplitContainer.Panel2.Controls.Add(this.quantityShoppingCartTextBox);
+			this.salesSplitContainer.Size = new System.Drawing.Size(1041, 645);
+			this.salesSplitContainer.SplitterDistance = 860;
+			this.salesSplitContainer.TabIndex = 100;
+			// 
 			// SalesControl
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.Controls.Add(this.currentPriceLabel);
-			this.Controls.Add(this.emptyShoppingCartButton);
-			this.Controls.Add(this.finalizePurchaseButton);
-			this.Controls.Add(this.addProductShoppingCartButton);
-			this.Controls.Add(this.cancelProductShoppingCartButton);
-			this.Controls.Add(this.quantityShoppingCartTextBox);
-			this.Controls.Add(this.itemIdShoppingCartTextBox);
-			this.Controls.Add(this.quantityShoppingCartLabel);
-			this.Controls.Add(this.itemIdShoppingCartLabel);
-			this.Controls.Add(this.shoppingCartLabel);
-			this.Controls.Add(this.shoppingCartListBox);
-			this.Controls.Add(this.moviesLabel);
-			this.Controls.Add(this.gamesLabel);
-			this.Controls.Add(this.booksLabel);
-			this.Controls.Add(this.movieDataGridView);
-			this.Controls.Add(this.gameDataGridView);
-			this.Controls.Add(this.bookDataGridView);
+			this.Controls.Add(this.salesSplitContainer);
 			this.Name = "SalesControl";
 			this.Size = new System.Drawing.Size(1041, 645);
 			((System.ComponentModel.ISupportInitialize) (this.movieDataGridView)).EndInit();
 			((System.ComponentModel.ISupportInitialize) (this.gameDataGridView)).EndInit();
 			((System.ComponentModel.ISupportInitialize) (this.bookDataGridView)).EndInit();
+			this.salesSplitContainer.Panel1.ResumeLayout(false);
+			this.salesSplitContainer.Panel2.ResumeLayout(false);
+			this.salesSplitContainer.Panel2.PerformLayout();
+			((System.ComponentModel.ISupportInitialize) (this.salesSplitContainer)).EndInit();
+			this.salesSplitContainer.ResumeLayout(false);
 			this.ResumeLayout(false);
-			this.PerformLayout();
 		}
+
+		private System.Windows.Forms.SplitContainer salesSplitContainer;
 
 		private System.Windows.Forms.Button emptyShoppingCartButton;
 
