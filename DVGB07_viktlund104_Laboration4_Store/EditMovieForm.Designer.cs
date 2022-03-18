@@ -49,6 +49,7 @@ namespace DVGB07_viktlund104_Laboration4_Store
 			// 
 			// cancelButton
 			// 
+			this.cancelButton.Anchor = ((System.Windows.Forms.AnchorStyles) (((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Right)));
 			this.cancelButton.Location = new System.Drawing.Point(241, 168);
 			this.cancelButton.Name = "cancelButton";
 			this.cancelButton.Size = new System.Drawing.Size(75, 23);
@@ -59,6 +60,7 @@ namespace DVGB07_viktlund104_Laboration4_Store
 			// 
 			// okButton
 			// 
+			this.okButton.Anchor = ((System.Windows.Forms.AnchorStyles) ((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
 			this.okButton.Location = new System.Drawing.Point(160, 168);
 			this.okButton.Name = "okButton";
 			this.okButton.Size = new System.Drawing.Size(75, 23);
@@ -69,6 +71,7 @@ namespace DVGB07_viktlund104_Laboration4_Store
 			// 
 			// playingTimeTextBox
 			// 
+			this.playingTimeTextBox.Anchor = ((System.Windows.Forms.AnchorStyles) (((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
 			this.playingTimeTextBox.Location = new System.Drawing.Point(93, 142);
 			this.playingTimeTextBox.Name = "playingTimeTextBox";
 			this.playingTimeTextBox.Size = new System.Drawing.Size(223, 20);
@@ -84,6 +87,7 @@ namespace DVGB07_viktlund104_Laboration4_Store
 			// 
 			// formatTextBox
 			// 
+			this.formatTextBox.Anchor = ((System.Windows.Forms.AnchorStyles) (((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
 			this.formatTextBox.Location = new System.Drawing.Point(93, 116);
 			this.formatTextBox.Name = "formatTextBox";
 			this.formatTextBox.Size = new System.Drawing.Size(223, 20);
@@ -99,6 +103,7 @@ namespace DVGB07_viktlund104_Laboration4_Store
 			// 
 			// quantityTextBox
 			// 
+			this.quantityTextBox.Anchor = ((System.Windows.Forms.AnchorStyles) (((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
 			this.quantityTextBox.Location = new System.Drawing.Point(93, 12);
 			this.quantityTextBox.Name = "quantityTextBox";
 			this.quantityTextBox.Size = new System.Drawing.Size(223, 20);
@@ -114,6 +119,7 @@ namespace DVGB07_viktlund104_Laboration4_Store
 			// 
 			// priceTextBox
 			// 
+			this.priceTextBox.Anchor = ((System.Windows.Forms.AnchorStyles) (((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
 			this.priceTextBox.Location = new System.Drawing.Point(93, 90);
 			this.priceTextBox.Name = "priceTextBox";
 			this.priceTextBox.Size = new System.Drawing.Size(223, 20);
@@ -121,6 +127,7 @@ namespace DVGB07_viktlund104_Laboration4_Store
 			// 
 			// idTextBox
 			// 
+			this.idTextBox.Anchor = ((System.Windows.Forms.AnchorStyles) (((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
 			this.idTextBox.Location = new System.Drawing.Point(93, 38);
 			this.idTextBox.Name = "idTextBox";
 			this.idTextBox.Size = new System.Drawing.Size(223, 20);
@@ -144,6 +151,7 @@ namespace DVGB07_viktlund104_Laboration4_Store
 			// 
 			// nameTextBox
 			// 
+			this.nameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles) (((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
 			this.nameTextBox.Location = new System.Drawing.Point(93, 64);
 			this.nameTextBox.Name = "nameTextBox";
 			this.nameTextBox.Size = new System.Drawing.Size(223, 20);
@@ -176,6 +184,7 @@ namespace DVGB07_viktlund104_Laboration4_Store
 			this.Controls.Add(this.idLabel);
 			this.Controls.Add(this.nameTextBox);
 			this.Controls.Add(this.nameLabel);
+			this.MinimumSize = new System.Drawing.Size(347, 246);
 			this.Name = "EditMovieForm";
 			this.Text = "Edit Movie";
 			this.ResumeLayout(false);

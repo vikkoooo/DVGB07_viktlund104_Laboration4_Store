@@ -47,26 +47,29 @@ namespace DVGB07_viktlund104_Laboration4_Store
 			// 
 			// cancelButton
 			// 
+			this.cancelButton.Anchor = ((System.Windows.Forms.AnchorStyles) (((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Right)));
 			this.cancelButton.Location = new System.Drawing.Point(244, 142);
 			this.cancelButton.Name = "cancelButton";
 			this.cancelButton.Size = new System.Drawing.Size(75, 23);
-			this.cancelButton.TabIndex = 7;
+			this.cancelButton.TabIndex = 6;
 			this.cancelButton.Text = "Cancel";
 			this.cancelButton.UseVisualStyleBackColor = true;
 			this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
 			// 
 			// okButton
 			// 
+			this.okButton.Anchor = ((System.Windows.Forms.AnchorStyles) ((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
 			this.okButton.Location = new System.Drawing.Point(163, 142);
 			this.okButton.Name = "okButton";
 			this.okButton.Size = new System.Drawing.Size(75, 23);
-			this.okButton.TabIndex = 6;
+			this.okButton.TabIndex = 7;
 			this.okButton.Text = "OK";
 			this.okButton.UseVisualStyleBackColor = true;
 			this.okButton.Click += new System.EventHandler(this.okButton_Click);
 			// 
 			// platformTextBox
 			// 
+			this.platformTextBox.Anchor = ((System.Windows.Forms.AnchorStyles) (((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
 			this.platformTextBox.Location = new System.Drawing.Point(96, 116);
 			this.platformTextBox.Name = "platformTextBox";
 			this.platformTextBox.Size = new System.Drawing.Size(223, 20);
@@ -82,6 +85,7 @@ namespace DVGB07_viktlund104_Laboration4_Store
 			// 
 			// quantityTextBox
 			// 
+			this.quantityTextBox.Anchor = ((System.Windows.Forms.AnchorStyles) (((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
 			this.quantityTextBox.Location = new System.Drawing.Point(96, 12);
 			this.quantityTextBox.Name = "quantityTextBox";
 			this.quantityTextBox.Size = new System.Drawing.Size(223, 20);
@@ -97,6 +101,7 @@ namespace DVGB07_viktlund104_Laboration4_Store
 			// 
 			// priceTextBox
 			// 
+			this.priceTextBox.Anchor = ((System.Windows.Forms.AnchorStyles) (((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
 			this.priceTextBox.Location = new System.Drawing.Point(96, 90);
 			this.priceTextBox.Name = "priceTextBox";
 			this.priceTextBox.Size = new System.Drawing.Size(223, 20);
@@ -104,6 +109,7 @@ namespace DVGB07_viktlund104_Laboration4_Store
 			// 
 			// idTextBox
 			// 
+			this.idTextBox.Anchor = ((System.Windows.Forms.AnchorStyles) (((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
 			this.idTextBox.Location = new System.Drawing.Point(96, 38);
 			this.idTextBox.Name = "idTextBox";
 			this.idTextBox.Size = new System.Drawing.Size(223, 20);
@@ -127,6 +133,7 @@ namespace DVGB07_viktlund104_Laboration4_Store
 			// 
 			// nameTextBox
 			// 
+			this.nameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles) (((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
 			this.nameTextBox.Location = new System.Drawing.Point(96, 64);
 			this.nameTextBox.Name = "nameTextBox";
 			this.nameTextBox.Size = new System.Drawing.Size(223, 20);
@@ -157,6 +164,7 @@ namespace DVGB07_viktlund104_Laboration4_Store
 			this.Controls.Add(this.idLabel);
 			this.Controls.Add(this.nameTextBox);
 			this.Controls.Add(this.nameLabel);
+			this.MinimumSize = new System.Drawing.Size(355, 228);
 			this.Name = "EditGameForm";
 			this.Text = "Edit Game";
 			this.ResumeLayout(false);

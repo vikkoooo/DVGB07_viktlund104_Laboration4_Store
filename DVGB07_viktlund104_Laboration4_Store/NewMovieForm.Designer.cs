@@ -45,6 +45,7 @@ namespace DVGB07_viktlund104_Laboration4_Store
 			// 
 			// cancelButton
 			// 
+			this.cancelButton.Anchor = ((System.Windows.Forms.AnchorStyles) (((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Right)));
 			this.cancelButton.Location = new System.Drawing.Point(242, 116);
 			this.cancelButton.Name = "cancelButton";
 			this.cancelButton.Size = new System.Drawing.Size(75, 23);
@@ -55,6 +56,7 @@ namespace DVGB07_viktlund104_Laboration4_Store
 			// 
 			// okButton
 			// 
+			this.okButton.Anchor = ((System.Windows.Forms.AnchorStyles) ((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
 			this.okButton.Location = new System.Drawing.Point(161, 116);
 			this.okButton.Name = "okButton";
 			this.okButton.Size = new System.Drawing.Size(75, 23);
@@ -65,6 +67,7 @@ namespace DVGB07_viktlund104_Laboration4_Store
 			// 
 			// playingTimeTextBox
 			// 
+			this.playingTimeTextBox.Anchor = ((System.Windows.Forms.AnchorStyles) (((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
 			this.playingTimeTextBox.Location = new System.Drawing.Point(94, 90);
 			this.playingTimeTextBox.Name = "playingTimeTextBox";
 			this.playingTimeTextBox.Size = new System.Drawing.Size(223, 20);
@@ -80,6 +83,7 @@ namespace DVGB07_viktlund104_Laboration4_Store
 			// 
 			// formatTextBox
 			// 
+			this.formatTextBox.Anchor = ((System.Windows.Forms.AnchorStyles) (((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
 			this.formatTextBox.Location = new System.Drawing.Point(94, 64);
 			this.formatTextBox.Name = "formatTextBox";
 			this.formatTextBox.Size = new System.Drawing.Size(223, 20);
@@ -87,6 +91,7 @@ namespace DVGB07_viktlund104_Laboration4_Store
 			// 
 			// priceTextBox
 			// 
+			this.priceTextBox.Anchor = ((System.Windows.Forms.AnchorStyles) (((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
 			this.priceTextBox.Location = new System.Drawing.Point(94, 38);
 			this.priceTextBox.Name = "priceTextBox";
 			this.priceTextBox.Size = new System.Drawing.Size(223, 20);
@@ -102,6 +107,7 @@ namespace DVGB07_viktlund104_Laboration4_Store
 			// 
 			// nameTextBox
 			// 
+			this.nameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles) (((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
 			this.nameTextBox.Location = new System.Drawing.Point(94, 12);
 			this.nameTextBox.Name = "nameTextBox";
 			this.nameTextBox.Size = new System.Drawing.Size(223, 20);
@@ -138,6 +144,7 @@ namespace DVGB07_viktlund104_Laboration4_Store
 			this.Controls.Add(this.priceLabel);
 			this.Controls.Add(this.nameTextBox);
 			this.Controls.Add(this.nameLabel);
+			this.MinimumSize = new System.Drawing.Size(347, 194);
 			this.Name = "NewMovieForm";
 			this.Text = "New Movie";
 			this.ResumeLayout(false);

@@ -53,6 +53,7 @@ namespace DVGB07_viktlund104_Laboration4_Store
 			// 
 			// cancelButton
 			// 
+			this.cancelButton.Anchor = ((System.Windows.Forms.AnchorStyles) (((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Right)));
 			this.cancelButton.Location = new System.Drawing.Point(238, 224);
 			this.cancelButton.Name = "cancelButton";
 			this.cancelButton.Size = new System.Drawing.Size(75, 23);
@@ -63,6 +64,7 @@ namespace DVGB07_viktlund104_Laboration4_Store
 			// 
 			// okButton
 			// 
+			this.okButton.Anchor = ((System.Windows.Forms.AnchorStyles) ((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
 			this.okButton.Location = new System.Drawing.Point(157, 224);
 			this.okButton.Name = "okButton";
 			this.okButton.Size = new System.Drawing.Size(75, 23);
@@ -73,6 +75,7 @@ namespace DVGB07_viktlund104_Laboration4_Store
 			// 
 			// languageTextBox
 			// 
+			this.languageTextBox.Anchor = ((System.Windows.Forms.AnchorStyles) (((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
 			this.languageTextBox.Location = new System.Drawing.Point(90, 192);
 			this.languageTextBox.Name = "languageTextBox";
 			this.languageTextBox.Size = new System.Drawing.Size(223, 20);
@@ -88,6 +91,7 @@ namespace DVGB07_viktlund104_Laboration4_Store
 			// 
 			// formatTextBox
 			// 
+			this.formatTextBox.Anchor = ((System.Windows.Forms.AnchorStyles) (((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
 			this.formatTextBox.Location = new System.Drawing.Point(90, 166);
 			this.formatTextBox.Name = "formatTextBox";
 			this.formatTextBox.Size = new System.Drawing.Size(223, 20);
@@ -103,6 +107,7 @@ namespace DVGB07_viktlund104_Laboration4_Store
 			// 
 			// genreTextBox
 			// 
+			this.genreTextBox.Anchor = ((System.Windows.Forms.AnchorStyles) (((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
 			this.genreTextBox.Location = new System.Drawing.Point(90, 140);
 			this.genreTextBox.Name = "genreTextBox";
 			this.genreTextBox.Size = new System.Drawing.Size(223, 20);
@@ -118,6 +123,7 @@ namespace DVGB07_viktlund104_Laboration4_Store
 			// 
 			// authorTextBox
 			// 
+			this.authorTextBox.Anchor = ((System.Windows.Forms.AnchorStyles) (((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
 			this.authorTextBox.Location = new System.Drawing.Point(90, 114);
 			this.authorTextBox.Name = "authorTextBox";
 			this.authorTextBox.Size = new System.Drawing.Size(223, 20);
@@ -133,6 +139,7 @@ namespace DVGB07_viktlund104_Laboration4_Store
 			// 
 			// priceTextBox
 			// 
+			this.priceTextBox.Anchor = ((System.Windows.Forms.AnchorStyles) (((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
 			this.priceTextBox.Location = new System.Drawing.Point(90, 88);
 			this.priceTextBox.Name = "priceTextBox";
 			this.priceTextBox.Size = new System.Drawing.Size(223, 20);
@@ -148,6 +155,7 @@ namespace DVGB07_viktlund104_Laboration4_Store
 			// 
 			// nameTextBox
 			// 
+			this.nameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles) (((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
 			this.nameTextBox.Location = new System.Drawing.Point(90, 62);
 			this.nameTextBox.Name = "nameTextBox";
 			this.nameTextBox.Size = new System.Drawing.Size(223, 20);
@@ -171,6 +179,7 @@ namespace DVGB07_viktlund104_Laboration4_Store
 			// 
 			// idTextBox
 			// 
+			this.idTextBox.Anchor = ((System.Windows.Forms.AnchorStyles) (((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
 			this.idTextBox.Location = new System.Drawing.Point(90, 36);
 			this.idTextBox.Name = "idTextBox";
 			this.idTextBox.Size = new System.Drawing.Size(223, 20);
@@ -186,6 +195,7 @@ namespace DVGB07_viktlund104_Laboration4_Store
 			// 
 			// quantityTextBox
 			// 
+			this.quantityTextBox.Anchor = ((System.Windows.Forms.AnchorStyles) (((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
 			this.quantityTextBox.Location = new System.Drawing.Point(90, 10);
 			this.quantityTextBox.Name = "quantityTextBox";
 			this.quantityTextBox.Size = new System.Drawing.Size(223, 20);
@@ -214,6 +224,7 @@ namespace DVGB07_viktlund104_Laboration4_Store
 			this.Controls.Add(this.idLabel);
 			this.Controls.Add(this.nameTextBox);
 			this.Controls.Add(this.nameLabel);
+			this.MinimumSize = new System.Drawing.Size(363, 298);
 			this.Name = "EditBookForm";
 			this.Text = "Edit Book";
 			this.ResumeLayout(false);

@@ -72,7 +72,8 @@ namespace DVGB07_viktlund104_Laboration4_Store
 			this.bookDataGridView.ReadOnly = true;
 			this.bookDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
 			this.bookDataGridView.Size = new System.Drawing.Size(845, 150);
-			this.bookDataGridView.TabIndex = 0;
+			this.bookDataGridView.TabIndex = 99;
+			this.bookDataGridView.TabStop = false;
 			this.bookDataGridView.SelectionChanged += new System.EventHandler(this.bookDataGridView_SelectionChanged);
 			// 
 			// gameDataGridView
@@ -87,7 +88,8 @@ namespace DVGB07_viktlund104_Laboration4_Store
 			this.gameDataGridView.ReadOnly = true;
 			this.gameDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
 			this.gameDataGridView.Size = new System.Drawing.Size(845, 150);
-			this.gameDataGridView.TabIndex = 0;
+			this.gameDataGridView.TabIndex = 99;
+			this.gameDataGridView.TabStop = false;
 			this.gameDataGridView.SelectionChanged += new System.EventHandler(this.gameDataGridView_SelectionChanged);
 			// 
 			// movieDataGridView
@@ -102,7 +104,8 @@ namespace DVGB07_viktlund104_Laboration4_Store
 			this.movieDataGridView.ReadOnly = true;
 			this.movieDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
 			this.movieDataGridView.Size = new System.Drawing.Size(845, 150);
-			this.movieDataGridView.TabIndex = 0;
+			this.movieDataGridView.TabIndex = 99;
+			this.movieDataGridView.TabStop = false;
 			this.movieDataGridView.SelectionChanged += new System.EventHandler(this.movieDataGridView_SelectionChanged);
 			// 
 			// booksLabel
@@ -137,7 +140,7 @@ namespace DVGB07_viktlund104_Laboration4_Store
 			this.newBookButton.Location = new System.Drawing.Point(0, 182);
 			this.newBookButton.Name = "newBookButton";
 			this.newBookButton.Size = new System.Drawing.Size(75, 23);
-			this.newBookButton.TabIndex = 2;
+			this.newBookButton.TabIndex = 6;
 			this.newBookButton.Text = "New Book";
 			this.newBookButton.UseVisualStyleBackColor = true;
 			this.newBookButton.Click += new System.EventHandler(this.newBookButton_Click);
@@ -147,7 +150,7 @@ namespace DVGB07_viktlund104_Laboration4_Store
 			this.deleteBookButton.Location = new System.Drawing.Point(202, 182);
 			this.deleteBookButton.Name = "deleteBookButton";
 			this.deleteBookButton.Size = new System.Drawing.Size(126, 23);
-			this.deleteBookButton.TabIndex = 2;
+			this.deleteBookButton.TabIndex = 8;
 			this.deleteBookButton.Text = "Delete Selected Book";
 			this.deleteBookButton.UseVisualStyleBackColor = true;
 			this.deleteBookButton.Click += new System.EventHandler(this.deleteBookButton_Click);
@@ -157,7 +160,7 @@ namespace DVGB07_viktlund104_Laboration4_Store
 			this.editBookButton.Location = new System.Drawing.Point(81, 182);
 			this.editBookButton.Name = "editBookButton";
 			this.editBookButton.Size = new System.Drawing.Size(115, 23);
-			this.editBookButton.TabIndex = 2;
+			this.editBookButton.TabIndex = 7;
 			this.editBookButton.Text = "Edit Selected Book";
 			this.editBookButton.UseVisualStyleBackColor = true;
 			this.editBookButton.Click += new System.EventHandler(this.editBookButton_Click);
@@ -167,7 +170,7 @@ namespace DVGB07_viktlund104_Laboration4_Store
 			this.newGameButton.Location = new System.Drawing.Point(0, 402);
 			this.newGameButton.Name = "newGameButton";
 			this.newGameButton.Size = new System.Drawing.Size(75, 23);
-			this.newGameButton.TabIndex = 2;
+			this.newGameButton.TabIndex = 9;
 			this.newGameButton.Text = "New Game";
 			this.newGameButton.UseVisualStyleBackColor = true;
 			this.newGameButton.Click += new System.EventHandler(this.newGameButton_Click);
@@ -177,7 +180,7 @@ namespace DVGB07_viktlund104_Laboration4_Store
 			this.deleteGameButton.Location = new System.Drawing.Point(202, 402);
 			this.deleteGameButton.Name = "deleteGameButton";
 			this.deleteGameButton.Size = new System.Drawing.Size(126, 23);
-			this.deleteGameButton.TabIndex = 2;
+			this.deleteGameButton.TabIndex = 11;
 			this.deleteGameButton.Text = "Delete Selected Game";
 			this.deleteGameButton.UseVisualStyleBackColor = true;
 			this.deleteGameButton.Click += new System.EventHandler(this.deleteGameButton_Click);
@@ -187,7 +190,7 @@ namespace DVGB07_viktlund104_Laboration4_Store
 			this.editGameButton.Location = new System.Drawing.Point(81, 402);
 			this.editGameButton.Name = "editGameButton";
 			this.editGameButton.Size = new System.Drawing.Size(115, 23);
-			this.editGameButton.TabIndex = 2;
+			this.editGameButton.TabIndex = 10;
 			this.editGameButton.Text = "Edit Selected Game";
 			this.editGameButton.UseVisualStyleBackColor = true;
 			this.editGameButton.Click += new System.EventHandler(this.editGameButton_Click);
@@ -197,7 +200,7 @@ namespace DVGB07_viktlund104_Laboration4_Store
 			this.newMovieButton.Location = new System.Drawing.Point(0, 626);
 			this.newMovieButton.Name = "newMovieButton";
 			this.newMovieButton.Size = new System.Drawing.Size(75, 23);
-			this.newMovieButton.TabIndex = 2;
+			this.newMovieButton.TabIndex = 12;
 			this.newMovieButton.Text = "New Movie";
 			this.newMovieButton.UseVisualStyleBackColor = true;
 			this.newMovieButton.Click += new System.EventHandler(this.newMovieButton_Click);
@@ -207,7 +210,7 @@ namespace DVGB07_viktlund104_Laboration4_Store
 			this.deleteMovieButton.Location = new System.Drawing.Point(202, 626);
 			this.deleteMovieButton.Name = "deleteMovieButton";
 			this.deleteMovieButton.Size = new System.Drawing.Size(126, 23);
-			this.deleteMovieButton.TabIndex = 2;
+			this.deleteMovieButton.TabIndex = 14;
 			this.deleteMovieButton.Text = "Delete Selected Movie";
 			this.deleteMovieButton.UseVisualStyleBackColor = true;
 			this.deleteMovieButton.Click += new System.EventHandler(this.deleteMovieButton_Click);
@@ -217,7 +220,7 @@ namespace DVGB07_viktlund104_Laboration4_Store
 			this.editMovieButton.Location = new System.Drawing.Point(81, 626);
 			this.editMovieButton.Name = "editMovieButton";
 			this.editMovieButton.Size = new System.Drawing.Size(115, 23);
-			this.editMovieButton.TabIndex = 2;
+			this.editMovieButton.TabIndex = 13;
 			this.editMovieButton.Text = "Edit Selected Movie";
 			this.editMovieButton.UseVisualStyleBackColor = true;
 			this.editMovieButton.Click += new System.EventHandler(this.editMovieButton_Click);
@@ -228,7 +231,8 @@ namespace DVGB07_viktlund104_Laboration4_Store
 			this.shipmentListBox.Location = new System.Drawing.Point(877, 182);
 			this.shipmentListBox.Name = "shipmentListBox";
 			this.shipmentListBox.Size = new System.Drawing.Size(152, 121);
-			this.shipmentListBox.TabIndex = 3;
+			this.shipmentListBox.TabIndex = 99;
+			this.shipmentListBox.TabStop = false;
 			// 
 			// addShipmentLabel
 			// 
@@ -244,7 +248,7 @@ namespace DVGB07_viktlund104_Laboration4_Store
 			this.itemIdShipmentTextBox.Location = new System.Drawing.Point(929, 55);
 			this.itemIdShipmentTextBox.Name = "itemIdShipmentTextBox";
 			this.itemIdShipmentTextBox.Size = new System.Drawing.Size(100, 20);
-			this.itemIdShipmentTextBox.TabIndex = 5;
+			this.itemIdShipmentTextBox.TabIndex = 1;
 			// 
 			// itemIdShipmentLabel
 			// 
@@ -267,14 +271,14 @@ namespace DVGB07_viktlund104_Laboration4_Store
 			this.quantityShipmentTextBox.Location = new System.Drawing.Point(929, 81);
 			this.quantityShipmentTextBox.Name = "quantityShipmentTextBox";
 			this.quantityShipmentTextBox.Size = new System.Drawing.Size(100, 20);
-			this.quantityShipmentTextBox.TabIndex = 5;
+			this.quantityShipmentTextBox.TabIndex = 2;
 			// 
 			// cancelProductShipmentButton
 			// 
 			this.cancelProductShipmentButton.Location = new System.Drawing.Point(954, 107);
 			this.cancelProductShipmentButton.Name = "cancelProductShipmentButton";
 			this.cancelProductShipmentButton.Size = new System.Drawing.Size(75, 23);
-			this.cancelProductShipmentButton.TabIndex = 6;
+			this.cancelProductShipmentButton.TabIndex = 4;
 			this.cancelProductShipmentButton.Text = "Cancel";
 			this.cancelProductShipmentButton.UseVisualStyleBackColor = true;
 			this.cancelProductShipmentButton.Click += new System.EventHandler(this.cancelProductShipmentButton_Click);
@@ -284,7 +288,7 @@ namespace DVGB07_viktlund104_Laboration4_Store
 			this.addProductShipmentButton.Location = new System.Drawing.Point(876, 107);
 			this.addProductShipmentButton.Name = "addProductShipmentButton";
 			this.addProductShipmentButton.Size = new System.Drawing.Size(75, 23);
-			this.addProductShipmentButton.TabIndex = 6;
+			this.addProductShipmentButton.TabIndex = 3;
 			this.addProductShipmentButton.Text = "Add";
 			this.addProductShipmentButton.UseVisualStyleBackColor = true;
 			this.addProductShipmentButton.Click += new System.EventHandler(this.addProductShipmentButton_Click);
@@ -294,7 +298,7 @@ namespace DVGB07_viktlund104_Laboration4_Store
 			this.finalizeShipmentButton.Location = new System.Drawing.Point(929, 309);
 			this.finalizeShipmentButton.Name = "finalizeShipmentButton";
 			this.finalizeShipmentButton.Size = new System.Drawing.Size(100, 23);
-			this.finalizeShipmentButton.TabIndex = 7;
+			this.finalizeShipmentButton.TabIndex = 5;
 			this.finalizeShipmentButton.Text = "Finalize Shipment";
 			this.finalizeShipmentButton.UseVisualStyleBackColor = true;
 			this.finalizeShipmentButton.Click += new System.EventHandler(this.finalizeShipmentButton_Click);
