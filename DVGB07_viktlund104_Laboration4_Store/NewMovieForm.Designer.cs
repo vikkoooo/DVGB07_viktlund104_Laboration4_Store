@@ -151,7 +151,6 @@ namespace DVGB07_viktlund104_Laboration4_Store
 		private System.Windows.Forms.TextBox formatTextBox;
 		private System.Windows.Forms.TextBox playingTimeTextBox;
 		private System.Windows.Forms.Label playingTimeLabel;
-		private System.Windows.Forms.TextBox authorTextBox;
 		private System.Windows.Forms.TextBox priceTextBox;
 		private System.Windows.Forms.Label priceLabel;
 		private System.Windows.Forms.TextBox nameTextBox;

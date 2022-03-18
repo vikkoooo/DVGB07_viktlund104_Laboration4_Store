@@ -137,6 +137,9 @@
             <AutoGen>True</AutoGen>
             <DependentUpon>Resources.resx</DependentUpon>
         </Compile>
+        <EmbeddedResource Include="SalesControl.resx">
+          <DependentUpon>SalesControl.cs</DependentUpon>
+        </EmbeddedResource>
         <EmbeddedResource Include="StockControl.resx">
           <DependentUpon>StockControl.cs</DependentUpon>
         </EmbeddedResource>

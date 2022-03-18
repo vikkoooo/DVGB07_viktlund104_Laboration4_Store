@@ -31,7 +31,7 @@ namespace DVGB07_viktlund104_Laboration4_Store
 			stockTab.Controls.Add(stock);
 			
 			// Add SalesControl to sales tab in MainForm
-			SalesControl sales = new SalesControl();
+			SalesControl sales = new SalesControl(db);
 			salesTab.Dock = DockStyle.Fill;
 			salesTab.Controls.Add(sales);
 		}

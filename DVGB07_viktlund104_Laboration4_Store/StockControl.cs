@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace DVGB07_viktlund104_Laboration4_Store
@@ -9,10 +10,12 @@ namespace DVGB07_viktlund104_Laboration4_Store
 		private Book selectedBook;
 		private Game selectedGame;
 		private Movie selectedMovie;
+		private Dictionary<int, int> shipmentList;
 
 		public StockControl(FileHandler db)
 		{
 			InitializeComponent();
+			shipmentList = new Dictionary<int, int>();
 			
 			// Initialize our bindingsources to gridviews
 			bookSource = new BindingSource();
@@ -154,5 +157,74 @@ namespace DVGB07_viktlund104_Laboration4_Store
 				movieSource.Remove(selectedMovie);
 			}
 		}
+
+		private void addProductShipmentButton_Click(object sender, EventArgs e)
+		{
+			shipmentList.Add(int.Parse(itemIdShipmentTextBox.Text), int.Parse(quantityShipmentTextBox.Text));
+			
+			itemIdShipmentTextBox.Text = "";
+			quantityShipmentTextBox.Text = "";
+
+			UpdateListBox();
+		}
+
+		private void UpdateListBox()
+		{
+			shipmentListBox.Items.Clear();
+
+			foreach (var e in shipmentList)
+			{
+				shipmentListBox.Items.Add($"ID: {e.Key}, Quantity: {e.Value}");
+			}
+		}
+
+		private void cancelProductShipmentButton_Click(object sender, EventArgs e)
+		{
+			itemIdShipmentTextBox.Text = "";
+			quantityShipmentTextBox.Text = "";
+		}
+
+		private void finalizeShipmentButton_Click(object sender, EventArgs e)
+		{
+			foreach (var pair in shipmentList)
+			{
+				// Check books
+				foreach (Book book in bookSource)
+				{
+					if (pair.Key == book.Id)
+					{
+						book.Quantity += pair.Value;
+					}
+				}
+				
+				// Games
+				foreach (Game game in gameSource)
+				{
+					if (pair.Key == game.Id)
+					{
+						game.Quantity += pair.Value;
+					}
+				}
+				
+				// Movies
+				foreach (Movie movie in movieSource)
+				{
+					if (pair.Key == movie.Id)
+					{
+						movie.Quantity += pair.Value;
+					}
+				}
+			}
+			
+			// Update UI
+			bookDataGridView.Refresh();
+			gameDataGridView.Refresh();
+			movieDataGridView.Refresh();
+			
+			// Clear shipment data
+			shipmentListBox.Items.Clear();
+			shipmentList.Clear();
+		}
 	}
+	
 }

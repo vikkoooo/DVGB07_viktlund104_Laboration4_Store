@@ -46,6 +46,15 @@ namespace DVGB07_viktlund104_Laboration4_Store
 			this.newMovieButton = new System.Windows.Forms.Button();
 			this.deleteMovieButton = new System.Windows.Forms.Button();
 			this.editMovieButton = new System.Windows.Forms.Button();
+			this.shipmentListBox = new System.Windows.Forms.ListBox();
+			this.addShipmentLabel = new System.Windows.Forms.Label();
+			this.itemIdShipmentTextBox = new System.Windows.Forms.TextBox();
+			this.itemIdShipmentLabel = new System.Windows.Forms.Label();
+			this.quantityShipmentLabel = new System.Windows.Forms.Label();
+			this.quantityShipmentTextBox = new System.Windows.Forms.TextBox();
+			this.cancelProductShipmentButton = new System.Windows.Forms.Button();
+			this.addProductShipmentButton = new System.Windows.Forms.Button();
+			this.finalizeShipmentButton = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize) (this.bookDataGridView)).BeginInit();
 			((System.ComponentModel.ISupportInitialize) (this.gameDataGridView)).BeginInit();
 			((System.ComponentModel.ISupportInitialize) (this.movieDataGridView)).BeginInit();
@@ -62,7 +71,7 @@ namespace DVGB07_viktlund104_Laboration4_Store
 			this.bookDataGridView.Name = "bookDataGridView";
 			this.bookDataGridView.ReadOnly = true;
 			this.bookDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-			this.bookDataGridView.Size = new System.Drawing.Size(862, 150);
+			this.bookDataGridView.Size = new System.Drawing.Size(845, 150);
 			this.bookDataGridView.TabIndex = 0;
 			this.bookDataGridView.SelectionChanged += new System.EventHandler(this.bookDataGridView_SelectionChanged);
 			// 
@@ -77,7 +86,7 @@ namespace DVGB07_viktlund104_Laboration4_Store
 			this.gameDataGridView.Name = "gameDataGridView";
 			this.gameDataGridView.ReadOnly = true;
 			this.gameDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-			this.gameDataGridView.Size = new System.Drawing.Size(862, 150);
+			this.gameDataGridView.Size = new System.Drawing.Size(845, 150);
 			this.gameDataGridView.TabIndex = 0;
 			this.gameDataGridView.SelectionChanged += new System.EventHandler(this.gameDataGridView_SelectionChanged);
 			// 
@@ -92,7 +101,7 @@ namespace DVGB07_viktlund104_Laboration4_Store
 			this.movieDataGridView.Name = "movieDataGridView";
 			this.movieDataGridView.ReadOnly = true;
 			this.movieDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-			this.movieDataGridView.Size = new System.Drawing.Size(862, 150);
+			this.movieDataGridView.Size = new System.Drawing.Size(845, 150);
 			this.movieDataGridView.TabIndex = 0;
 			this.movieDataGridView.SelectionChanged += new System.EventHandler(this.movieDataGridView_SelectionChanged);
 			// 
@@ -213,10 +222,96 @@ namespace DVGB07_viktlund104_Laboration4_Store
 			this.editMovieButton.UseVisualStyleBackColor = true;
 			this.editMovieButton.Click += new System.EventHandler(this.editMovieButton_Click);
 			// 
+			// shipmentListBox
+			// 
+			this.shipmentListBox.FormattingEnabled = true;
+			this.shipmentListBox.Location = new System.Drawing.Point(877, 182);
+			this.shipmentListBox.Name = "shipmentListBox";
+			this.shipmentListBox.Size = new System.Drawing.Size(152, 121);
+			this.shipmentListBox.TabIndex = 3;
+			// 
+			// addShipmentLabel
+			// 
+			this.addShipmentLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+			this.addShipmentLabel.Location = new System.Drawing.Point(875, 26);
+			this.addShipmentLabel.Name = "addShipmentLabel";
+			this.addShipmentLabel.Size = new System.Drawing.Size(154, 17);
+			this.addShipmentLabel.TabIndex = 4;
+			this.addShipmentLabel.Text = "Add shipment products";
+			// 
+			// itemIdShipmentTextBox
+			// 
+			this.itemIdShipmentTextBox.Location = new System.Drawing.Point(929, 55);
+			this.itemIdShipmentTextBox.Name = "itemIdShipmentTextBox";
+			this.itemIdShipmentTextBox.Size = new System.Drawing.Size(100, 20);
+			this.itemIdShipmentTextBox.TabIndex = 5;
+			// 
+			// itemIdShipmentLabel
+			// 
+			this.itemIdShipmentLabel.Location = new System.Drawing.Point(875, 58);
+			this.itemIdShipmentLabel.Name = "itemIdShipmentLabel";
+			this.itemIdShipmentLabel.Size = new System.Drawing.Size(48, 17);
+			this.itemIdShipmentLabel.TabIndex = 4;
+			this.itemIdShipmentLabel.Text = "Item ID";
+			// 
+			// quantityShipmentLabel
+			// 
+			this.quantityShipmentLabel.Location = new System.Drawing.Point(875, 85);
+			this.quantityShipmentLabel.Name = "quantityShipmentLabel";
+			this.quantityShipmentLabel.Size = new System.Drawing.Size(48, 17);
+			this.quantityShipmentLabel.TabIndex = 4;
+			this.quantityShipmentLabel.Text = "Quantity";
+			// 
+			// quantityShipmentTextBox
+			// 
+			this.quantityShipmentTextBox.Location = new System.Drawing.Point(929, 81);
+			this.quantityShipmentTextBox.Name = "quantityShipmentTextBox";
+			this.quantityShipmentTextBox.Size = new System.Drawing.Size(100, 20);
+			this.quantityShipmentTextBox.TabIndex = 5;
+			// 
+			// cancelProductShipmentButton
+			// 
+			this.cancelProductShipmentButton.Location = new System.Drawing.Point(954, 107);
+			this.cancelProductShipmentButton.Name = "cancelProductShipmentButton";
+			this.cancelProductShipmentButton.Size = new System.Drawing.Size(75, 23);
+			this.cancelProductShipmentButton.TabIndex = 6;
+			this.cancelProductShipmentButton.Text = "Cancel";
+			this.cancelProductShipmentButton.UseVisualStyleBackColor = true;
+			this.cancelProductShipmentButton.Click += new System.EventHandler(this.cancelProductShipmentButton_Click);
+			// 
+			// addProductShipmentButton
+			// 
+			this.addProductShipmentButton.Location = new System.Drawing.Point(876, 107);
+			this.addProductShipmentButton.Name = "addProductShipmentButton";
+			this.addProductShipmentButton.Size = new System.Drawing.Size(75, 23);
+			this.addProductShipmentButton.TabIndex = 6;
+			this.addProductShipmentButton.Text = "Add";
+			this.addProductShipmentButton.UseVisualStyleBackColor = true;
+			this.addProductShipmentButton.Click += new System.EventHandler(this.addProductShipmentButton_Click);
+			// 
+			// finalizeShipmentButton
+			// 
+			this.finalizeShipmentButton.Location = new System.Drawing.Point(929, 309);
+			this.finalizeShipmentButton.Name = "finalizeShipmentButton";
+			this.finalizeShipmentButton.Size = new System.Drawing.Size(100, 23);
+			this.finalizeShipmentButton.TabIndex = 7;
+			this.finalizeShipmentButton.Text = "Finalize Shipment";
+			this.finalizeShipmentButton.UseVisualStyleBackColor = true;
+			this.finalizeShipmentButton.Click += new System.EventHandler(this.finalizeShipmentButton_Click);
+			// 
 			// StockControl
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.Controls.Add(this.finalizeShipmentButton);
+			this.Controls.Add(this.addProductShipmentButton);
+			this.Controls.Add(this.cancelProductShipmentButton);
+			this.Controls.Add(this.quantityShipmentTextBox);
+			this.Controls.Add(this.itemIdShipmentTextBox);
+			this.Controls.Add(this.quantityShipmentLabel);
+			this.Controls.Add(this.itemIdShipmentLabel);
+			this.Controls.Add(this.addShipmentLabel);
+			this.Controls.Add(this.shipmentListBox);
 			this.Controls.Add(this.editMovieButton);
 			this.Controls.Add(this.editGameButton);
 			this.Controls.Add(this.deleteMovieButton);
@@ -233,12 +328,25 @@ namespace DVGB07_viktlund104_Laboration4_Store
 			this.Controls.Add(this.gameDataGridView);
 			this.Controls.Add(this.bookDataGridView);
 			this.Name = "StockControl";
-			this.Size = new System.Drawing.Size(897, 656);
+			this.Size = new System.Drawing.Size(1032, 656);
 			((System.ComponentModel.ISupportInitialize) (this.bookDataGridView)).EndInit();
 			((System.ComponentModel.ISupportInitialize) (this.gameDataGridView)).EndInit();
 			((System.ComponentModel.ISupportInitialize) (this.movieDataGridView)).EndInit();
 			this.ResumeLayout(false);
+			this.PerformLayout();
 		}
+
+		private System.Windows.Forms.Button finalizeShipmentButton;
+
+		private System.Windows.Forms.ListBox shipmentListBox;
+		private System.Windows.Forms.Label itemIdShipmentLabel;
+		private System.Windows.Forms.Label quantityShipmentLabel;
+		private System.Windows.Forms.TextBox quantityShipmentTextBox;
+		private System.Windows.Forms.Button cancelProductShipmentButton;
+		private System.Windows.Forms.Button addProductShipmentButton;
+
+		private System.Windows.Forms.Label addShipmentLabel;
+		private System.Windows.Forms.TextBox itemIdShipmentTextBox;
 
 		private System.Windows.Forms.Button newMovieButton;
 		private System.Windows.Forms.Button deleteMovieButton;
