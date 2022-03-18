@@ -132,6 +132,7 @@ namespace DVGB07_viktlund104_Laboration4_Store
 			// 
 			// finalizePurchaseButton
 			// 
+			this.finalizePurchaseButton.Anchor = ((System.Windows.Forms.AnchorStyles) (((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
 			this.finalizePurchaseButton.Location = new System.Drawing.Point(57, 309);
 			this.finalizePurchaseButton.Name = "finalizePurchaseButton";
 			this.finalizePurchaseButton.Size = new System.Drawing.Size(100, 23);
@@ -152,6 +153,7 @@ namespace DVGB07_viktlund104_Laboration4_Store
 			// 
 			// cancelProductShoppingCartButton
 			// 
+			this.cancelProductShoppingCartButton.Anchor = ((System.Windows.Forms.AnchorStyles) (((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
 			this.cancelProductShoppingCartButton.Location = new System.Drawing.Point(82, 107);
 			this.cancelProductShoppingCartButton.Name = "cancelProductShoppingCartButton";
 			this.cancelProductShoppingCartButton.Size = new System.Drawing.Size(75, 23);
@@ -162,6 +164,7 @@ namespace DVGB07_viktlund104_Laboration4_Store
 			// 
 			// quantityShoppingCartTextBox
 			// 
+			this.quantityShoppingCartTextBox.Anchor = ((System.Windows.Forms.AnchorStyles) (((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
 			this.quantityShoppingCartTextBox.Location = new System.Drawing.Point(57, 81);
 			this.quantityShoppingCartTextBox.Name = "quantityShoppingCartTextBox";
 			this.quantityShoppingCartTextBox.Size = new System.Drawing.Size(100, 20);
@@ -202,6 +205,7 @@ namespace DVGB07_viktlund104_Laboration4_Store
 			// 
 			// shoppingCartListBox
 			// 
+			this.shoppingCartListBox.Anchor = ((System.Windows.Forms.AnchorStyles) ((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
 			this.shoppingCartListBox.FormattingEnabled = true;
 			this.shoppingCartListBox.Location = new System.Drawing.Point(5, 182);
 			this.shoppingCartListBox.Name = "shoppingCartListBox";
@@ -218,6 +222,7 @@ namespace DVGB07_viktlund104_Laboration4_Store
 			// 
 			// emptyShoppingCartButton
 			// 
+			this.emptyShoppingCartButton.Anchor = ((System.Windows.Forms.AnchorStyles) ((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
 			this.emptyShoppingCartButton.Location = new System.Drawing.Point(57, 338);
 			this.emptyShoppingCartButton.Name = "emptyShoppingCartButton";
 			this.emptyShoppingCartButton.Size = new System.Drawing.Size(100, 23);
