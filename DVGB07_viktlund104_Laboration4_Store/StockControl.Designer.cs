@@ -56,6 +56,7 @@ namespace DVGB07_viktlund104_Laboration4_Store
 			this.addProductShipmentButton = new System.Windows.Forms.Button();
 			this.finalizeShipmentButton = new System.Windows.Forms.Button();
 			this.stockSplitContainer = new System.Windows.Forms.SplitContainer();
+			this.clearShipmentButton = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize) (this.bookDataGridView)).BeginInit();
 			((System.ComponentModel.ISupportInitialize) (this.gameDataGridView)).BeginInit();
 			((System.ComponentModel.ISupportInitialize) (this.movieDataGridView)).BeginInit();
@@ -339,6 +340,7 @@ namespace DVGB07_viktlund104_Laboration4_Store
 			// 
 			// stockSplitContainer.Panel2
 			// 
+			this.stockSplitContainer.Panel2.Controls.Add(this.clearShipmentButton);
 			this.stockSplitContainer.Panel2.Controls.Add(this.addShipmentLabel);
 			this.stockSplitContainer.Panel2.Controls.Add(this.finalizeShipmentButton);
 			this.stockSplitContainer.Panel2.Controls.Add(this.shipmentListBox);
@@ -351,6 +353,17 @@ namespace DVGB07_viktlund104_Laboration4_Store
 			this.stockSplitContainer.Size = new System.Drawing.Size(1032, 656);
 			this.stockSplitContainer.SplitterDistance = 860;
 			this.stockSplitContainer.TabIndex = 100;
+			// 
+			// clearShipmentButton
+			// 
+			this.clearShipmentButton.Anchor = ((System.Windows.Forms.AnchorStyles) ((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
+			this.clearShipmentButton.Location = new System.Drawing.Point(57, 338);
+			this.clearShipmentButton.Name = "clearShipmentButton";
+			this.clearShipmentButton.Size = new System.Drawing.Size(100, 23);
+			this.clearShipmentButton.TabIndex = 100;
+			this.clearShipmentButton.Text = "Clear Shipment";
+			this.clearShipmentButton.UseVisualStyleBackColor = true;
+			this.clearShipmentButton.Click += new System.EventHandler(this.clearShipmentButton_Click);
 			// 
 			// StockControl
 			// 
@@ -369,6 +382,8 @@ namespace DVGB07_viktlund104_Laboration4_Store
 			this.stockSplitContainer.ResumeLayout(false);
 			this.ResumeLayout(false);
 		}
+
+		private System.Windows.Forms.Button clearShipmentButton;
 
 		private System.Windows.Forms.SplitContainer stockSplitContainer;
 

@@ -42,22 +42,25 @@ namespace DVGB07_viktlund104_Laboration4_Store
 			
 			Movie.Format = formatTextBox.Text;
 
-			try
+			if (!string.IsNullOrWhiteSpace(playingTimeTextBox.Text))
 			{
-				Movie.PlayingTime = int.Parse(playingTimeTextBox.Text);
-			}
-			catch (Exception exception)
-			{
-				MessageBox.Show("Playing time can not contain letters and must have no decimals", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-				return;
+				try
+				{
+					Movie.PlayingTime = int.Parse(playingTimeTextBox.Text);
+				}
+				catch (Exception exception)
+				{
+					MessageBox.Show("Playing time can not contain letters and must have no decimals", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+					return;
+				}
+				
+				if (Movie.PlayingTime <= 0)
+				{
+					MessageBox.Show("Playing time cannot be 0 or negative", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+					return;
+				}
 			}
 			
-			if (Movie.PlayingTime <= 0)
-			{
-				MessageBox.Show("Price cannot be 0 or negative", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-				return;
-			}
-
 			this.DialogResult = DialogResult.OK;
 			this.Close();		
 		}

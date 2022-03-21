@@ -295,6 +295,12 @@ namespace DVGB07_viktlund104_Laboration4_Store
 
 			return false;
 		}
+
+		private void clearShipmentButton_Click(object sender, EventArgs e)
+		{
+			shipmentListBox.Items.Clear();
+			shipmentList.Clear();
+		}
 	}
 	
 }

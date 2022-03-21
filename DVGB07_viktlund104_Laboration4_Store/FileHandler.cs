@@ -21,7 +21,7 @@ namespace DVGB07_viktlund104_Laboration4_Store
 			GameList = new BindingList<Game>();
 			MovieList = new BindingList<Movie>();
 			
-			// Add dummy data during dev
+			// Dummy data dev
 			// BookList.Add(new Book() { Name = "Bello Gallico et Civili", Price = 449, Author = "Julius Caesar", Genre = "Historia", Format = "Inbunden", Language = "Latin" });
 			// BookList.Add(new Book() { Name = "How to Read a Book", Price = 149, Author = "Mortimer J. Adler", Genre = "Kursliteratur", Format = "Pocket" });
 			// BookList.Add(new Book() { Name = "Moby Dick", Price = 49, Author = "Herman Melville", Genre = "Historia", Format = "Pocket" });
