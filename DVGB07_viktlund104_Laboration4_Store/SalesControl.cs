@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Windows.Forms;
 
 namespace DVGB07_viktlund104_Laboration4_Store
@@ -87,8 +88,65 @@ namespace DVGB07_viktlund104_Laboration4_Store
 
 		private void addProductShoppingCartButton_Click(object sender, EventArgs e)
 		{
-			shoppingCartList.Add(int.Parse(itemIdShoppingCartTextBox.Text), int.Parse(quantityShoppingCartTextBox.Text));
+			int itemId, quantity;
+			
+			// Validate inputs
+			try
+			{
+				itemId = int.Parse(itemIdShoppingCartTextBox.Text);
+				quantity = int.Parse(quantityShoppingCartTextBox.Text);
+			}
+			catch (Exception exception)
+			{
+				MessageBox.Show("Values must be whole numbers only, not letters or decimals", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				return;
+			}
 
+			// Check that input is present in list of items with quantity
+			if (!ItemIsPresentInList(itemId))
+			{
+				MessageBox.Show("Item id must be something that exists or has current stock", "Error", MessageBoxButtons.OK,
+					MessageBoxIcon.Error);
+				return;
+			}
+			
+			// Make sure quantity is not more than current stock
+			if (QuantityAboveStock(itemId, quantity))
+			{
+				MessageBox.Show("Quantity can not be above stock.", "Error", MessageBoxButtons.OK,
+					MessageBoxIcon.Error);
+				return;
+			}
+			
+			// Quantity can not be negative or 0
+			if (quantity <= 0)
+			{
+				MessageBox.Show("Quantity can not be 0 or negative.", "Error", MessageBoxButtons.OK,
+					MessageBoxIcon.Error);
+				return;
+			}
+			
+			// All ok, try add to cart
+			try
+			{
+				shoppingCartList.Add(itemId, quantity);
+			}
+			// If this catch caught, the item was previously added to the list. So we update the quantity
+			// as long as we don't update to a value larger than current stock
+			catch (ArgumentException exception)
+			{
+				int oldQuantity = shoppingCartList[itemId];
+
+				if (QuantityAboveStock(itemId, oldQuantity + quantity))
+				{
+					MessageBox.Show("Quantity can not be above stock.", "Error", MessageBoxButtons.OK,
+						MessageBoxIcon.Error);
+					return;
+				}
+				// All good, update quantity
+				shoppingCartList[itemId] += quantity;
+			}
+			
 			itemIdShoppingCartTextBox.Text = "";
 			quantityShoppingCartTextBox.Text = "";
 
@@ -199,6 +257,76 @@ namespace DVGB07_viktlund104_Laboration4_Store
 			shoppingCartList.Clear();
 			totalPrice = 0;
 			currentPriceLabel.Text = "";
+		}
+
+		private bool ItemIsPresentInList(int idToCheck)
+		{
+			foreach (Book book in bookTempSource)
+			{
+				if (book.Id == idToCheck)
+				{
+					return true;
+				}
+			}
+			
+			foreach (Game game in gameTempSource)
+			{
+				if (game.Id == idToCheck)
+				{
+					return true;
+				}
+			}
+			
+			foreach (Movie movie in movieTempSource)
+			{
+				if (movie.Id == idToCheck)
+				{
+					return true;
+				}
+			}
+
+			return false;
+		}
+
+		private bool QuantityAboveStock(int idToCheck, int quantityToCheck)
+		{
+			foreach (Book book in bookTempSource)
+			{
+				if (book.Id == idToCheck)
+				{
+					if (quantityToCheck > book.Quantity)
+					{
+						return true;
+					}
+				}
+			}
+			
+			foreach (Game game in gameTempSource)
+			{
+				if (game.Id == idToCheck)
+				{
+					if (quantityToCheck > game.Quantity)
+					{
+						return true;
+					}
+					
+				}
+			}
+			
+			foreach (Movie movie in movieTempSource)
+			{
+				if (movie.Id == idToCheck)
+				{
+					if (quantityToCheck > movie.Quantity)
+					{
+						return true;
+					}
+					
+				}
+			}
+
+			return false;
+
 		}
 	}
 }

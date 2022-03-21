@@ -87,7 +87,7 @@ namespace DVGB07_viktlund104_Laboration4_Store
 
 		private void deleteBookButton_Click(object sender, EventArgs e)
 		{
-			var result = MessageBox.Show("Are your sure?", "Remove Book", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+			var result = MessageBox.Show($"Are your sure?\nCurrent stock: {selectedBook.Quantity}", "Remove Book", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
 			if (result == DialogResult.Yes)
 			{
@@ -118,7 +118,7 @@ namespace DVGB07_viktlund104_Laboration4_Store
 
 		private void deleteGameButton_Click(object sender, EventArgs e)
 		{
-			var result = MessageBox.Show("Are your sure?", "Remove Game", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+			var result = MessageBox.Show($"Are your sure?\nCurrent stock: {selectedGame.Quantity}", "Remove Game", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
 			if (result == DialogResult.Yes)
 			{
@@ -150,7 +150,7 @@ namespace DVGB07_viktlund104_Laboration4_Store
 
 		private void deleteMovieButton_Click(object sender, EventArgs e)
 		{
-			var result = MessageBox.Show("Are your sure?", "Remove Movie", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+			var result = MessageBox.Show($"Are your sure?\nCurrent stock: {selectedMovie.Quantity}", "Remove Movie", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
 			if (result == DialogResult.Yes)
 			{
