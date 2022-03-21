@@ -25,13 +25,23 @@ namespace DVGB07_viktlund104_Laboration4_Store
 
 		private void okButton_Click(object sender, EventArgs e)
 		{
-			book.Quantity = int.Parse(quantityTextBox.Text);
-			book.Id = int.Parse(idTextBox.Text);
-			book.Name = nameTextBox.Text;
-			book.Price = double.Parse(priceTextBox.Text);
-			book.Author = authorTextBox.Text;
-			book.Genre = genreTextBox.Text;
-			book.Language = languageTextBox.Text;
+			try
+			{
+				book.Quantity = int.Parse(quantityTextBox.Text);
+				book.Id = int.Parse(idTextBox.Text);
+				book.Name = nameTextBox.Text;
+				book.Price = double.Parse(priceTextBox.Text);
+				book.Author = authorTextBox.Text;
+				book.Genre = genreTextBox.Text;
+				book.Language = languageTextBox.Text;
+			}
+			catch (Exception exception)
+			{
+				MessageBox.Show(
+					$"An error was found. Please contact system administrator for help.\nMessage: {exception.Message}",
+					"Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				return;
+			}
 
 			this.DialogResult = DialogResult.OK;
 			this.Close();

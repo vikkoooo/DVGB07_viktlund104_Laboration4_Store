@@ -22,17 +22,26 @@ namespace DVGB07_viktlund104_Laboration4_Store
 
 		private void okButton_Click(object sender, EventArgs e)
 		{
-			movie.Quantity = int.Parse(quantityTextBox.Text);
-			movie.Id = int.Parse(idTextBox.Text);
-			movie.Name = nameTextBox.Text;
-			movie.Price = double.Parse(priceTextBox.Text);
-			movie.Format = formatTextBox.Text;
-			movie.PlayingTime = int.Parse(playingTimeTextBox.Text);
-
+			try
+			{
+				movie.Quantity = int.Parse(quantityTextBox.Text);
+				movie.Id = int.Parse(idTextBox.Text);
+				movie.Name = nameTextBox.Text;
+				movie.Price = double.Parse(priceTextBox.Text);
+				movie.Format = formatTextBox.Text;
+				movie.PlayingTime = int.Parse(playingTimeTextBox.Text);
+			}
+			catch (Exception exception)
+			{
+				MessageBox.Show(
+					$"An error was found. Please contact system administrator for help.\nMessage: {exception.Message}",
+					"Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				return;
+			}
 			this.DialogResult = DialogResult.OK;
-			this.Close();		
+			this.Close();	
 		}
-
+				
 		private void cancelButton_Click(object sender, EventArgs e)
 		{
 			this.DialogResult = DialogResult.Cancel;

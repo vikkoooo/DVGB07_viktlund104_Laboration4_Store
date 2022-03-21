@@ -160,7 +160,47 @@ namespace DVGB07_viktlund104_Laboration4_Store
 
 		private void addProductShipmentButton_Click(object sender, EventArgs e)
 		{
-			shipmentList.Add(int.Parse(itemIdShipmentTextBox.Text), int.Parse(quantityShipmentTextBox.Text));
+			int itemId, quantity;
+			
+			// Validate inputs
+			try
+			{
+				itemId = int.Parse(itemIdShipmentTextBox.Text);
+				quantity = int.Parse(quantityShipmentTextBox.Text);
+				
+			}
+			catch (Exception exception)
+			{
+				MessageBox.Show("Values must be whole numbers only, not letters or decimals", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				return;
+			}
+			
+			// Check that input is present in list
+			if (!ItemIsPresentInList(itemId))
+			{
+				MessageBox.Show("Item id must be something that exists", "Error", MessageBoxButtons.OK,
+					MessageBoxIcon.Error);
+				return;
+			}
+
+			// Quantity can not be negative or 0
+			if (quantity <= 0)
+			{
+				MessageBox.Show("Quantity can not be 0 or negative.", "Error", MessageBoxButtons.OK,
+					MessageBoxIcon.Error);
+				return;
+			}
+			
+			// All ok, try add to shipment
+			try
+			{
+				shipmentList.Add(itemId, quantity);
+			}
+			// If this catch caught, the item was previously added to the list. So we update the quantity
+			catch (ArgumentException exception)
+			{
+				shipmentList[itemId] += quantity;
+			}
 			
 			itemIdShipmentTextBox.Text = "";
 			quantityShipmentTextBox.Text = "";
@@ -224,6 +264,36 @@ namespace DVGB07_viktlund104_Laboration4_Store
 			// Clear shipment data
 			shipmentListBox.Items.Clear();
 			shipmentList.Clear();
+		}
+		
+		
+		private bool ItemIsPresentInList(int idToCheck)
+		{
+			foreach (Book book in bookSource)
+			{
+				if (book.Id == idToCheck)
+				{
+					return true;
+				}
+			}
+			
+			foreach (Game game in gameSource)
+			{
+				if (game.Id == idToCheck)
+				{
+					return true;
+				}
+			}
+			
+			foreach (Movie movie in movieSource)
+			{
+				if (movie.Id == idToCheck)
+				{
+					return true;
+				}
+			}
+
+			return false;
 		}
 	}
 	

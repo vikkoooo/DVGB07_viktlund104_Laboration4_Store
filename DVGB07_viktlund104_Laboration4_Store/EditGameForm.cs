@@ -21,11 +21,21 @@ namespace DVGB07_viktlund104_Laboration4_Store
 
 		private void okButton_Click(object sender, EventArgs e)
 		{
-			game.Quantity = int.Parse(quantityTextBox.Text);
-			game.Id = int.Parse(idTextBox.Text);
-			game.Name = nameTextBox.Text;
-			game.Price = double.Parse(priceTextBox.Text);
-			game.Platform = platformTextBox.Text;
+			try
+			{
+				game.Quantity = int.Parse(quantityTextBox.Text);
+				game.Id = int.Parse(idTextBox.Text);
+				game.Name = nameTextBox.Text;
+				game.Price = double.Parse(priceTextBox.Text);
+				game.Platform = platformTextBox.Text;
+			}
+			catch (Exception exception)
+			{
+				MessageBox.Show(
+					$"An error was found. Please contact system administrator for help.\nMessage: {exception.Message}",
+					"Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				return;
+			}
 
 			this.DialogResult = DialogResult.OK;
 			this.Close();		
@@ -35,7 +45,6 @@ namespace DVGB07_viktlund104_Laboration4_Store
 		{
 			this.DialogResult = DialogResult.Cancel;
 			this.Close();
-			
 		}
 	}
 }
