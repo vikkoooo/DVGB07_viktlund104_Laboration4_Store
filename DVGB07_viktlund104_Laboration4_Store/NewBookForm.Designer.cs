@@ -53,7 +53,7 @@ namespace DVGB07_viktlund104_Laboration4_Store
 			this.nameLabel.Name = "nameLabel";
 			this.nameLabel.Size = new System.Drawing.Size(100, 15);
 			this.nameLabel.TabIndex = 0;
-			this.nameLabel.Text = "Name";
+			this.nameLabel.Text = "Name*";
 			// 
 			// nameTextBox
 			// 
@@ -69,7 +69,7 @@ namespace DVGB07_viktlund104_Laboration4_Store
 			this.priceLabel.Name = "priceLabel";
 			this.priceLabel.Size = new System.Drawing.Size(100, 15);
 			this.priceLabel.TabIndex = 0;
-			this.priceLabel.Text = "Price (SEK)";
+			this.priceLabel.Text = "Price* (SEK)";
 			// 
 			// priceTextBox
 			// 
