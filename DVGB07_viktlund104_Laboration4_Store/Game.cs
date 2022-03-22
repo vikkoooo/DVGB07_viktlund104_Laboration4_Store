@@ -11,6 +11,7 @@
 		// Game specific implementations
 		public string Platform { get; set; }
 		
+		// Constructor for new game
 		public Game()
 		{
 			// Get unique ID
@@ -18,6 +19,7 @@
 			FileHandler.IdGenerator++;
 		}
 
+		// This constructor will be used when loading from file and want to assign ID ourselves
 		public Game(int id)
 		{
 			Id = id;
@@ -25,7 +27,7 @@
 		
 		public override string ToString()
 		{
-			return $"Id: {Id}, Name: {Name}, Price: {Price}, Platform: {Platform}";
+			return $"Quantity: {Quantity}, Id: {Id}, Name: {Name}, Price: {Price}, Platform: {Platform}";
 		}
 	}
 }

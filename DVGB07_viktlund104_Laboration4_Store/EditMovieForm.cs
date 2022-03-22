@@ -6,7 +6,8 @@ namespace DVGB07_viktlund104_Laboration4_Store
 	public partial class EditMovieForm : Form
 	{
 		private Movie movie;
-		
+
+		// Initializes the form and sets the field with the loaded data
 		public EditMovieForm(Movie movie_)
 		{
 			InitializeComponent();
@@ -20,6 +21,9 @@ namespace DVGB07_viktlund104_Laboration4_Store
 			playingTimeTextBox.Text = movie.PlayingTime.ToString();
 		}
 
+		/*
+		 * EVENTS
+		 */
 		private void okButton_Click(object sender, EventArgs e)
 		{
 			try
@@ -31,6 +35,7 @@ namespace DVGB07_viktlund104_Laboration4_Store
 				movie.Format = formatTextBox.Text;
 				movie.PlayingTime = int.Parse(playingTimeTextBox.Text);
 			}
+			// If this is caught, the user entered invalid data into some of the fields that will parse
 			catch (Exception exception)
 			{
 				MessageBox.Show(
@@ -38,10 +43,11 @@ namespace DVGB07_viktlund104_Laboration4_Store
 					"Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 				return;
 			}
+
 			this.DialogResult = DialogResult.OK;
-			this.Close();	
+			this.Close();
 		}
-				
+
 		private void cancelButton_Click(object sender, EventArgs e)
 		{
 			this.DialogResult = DialogResult.Cancel;

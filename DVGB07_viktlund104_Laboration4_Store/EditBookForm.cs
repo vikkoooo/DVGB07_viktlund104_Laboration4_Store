@@ -1,19 +1,19 @@
 ﻿using System;
-using System.Drawing;
 using System.Windows.Forms;
 
 namespace DVGB07_viktlund104_Laboration4_Store
 {
+	// This class allows hard edit of the selected Book.
 	public partial class EditBookForm : Form
 	{
 		private Book book;
-		
+
+		// Initializes the form and sets the field with the loaded data
 		public EditBookForm(Book book_)
 		{
 			InitializeComponent();
 			book = book_;
 			
-			// Set fields
 			quantityTextBox.Text = book.Quantity.ToString();
 			idTextBox.Text = book.Id.ToString();
 			nameTextBox.Text = book.Name;
@@ -23,6 +23,9 @@ namespace DVGB07_viktlund104_Laboration4_Store
 			languageTextBox.Text = book.Language;
 		}
 
+		/*
+		 * EVENTS
+		 */
 		private void okButton_Click(object sender, EventArgs e)
 		{
 			try
@@ -35,6 +38,7 @@ namespace DVGB07_viktlund104_Laboration4_Store
 				book.Genre = genreTextBox.Text;
 				book.Language = languageTextBox.Text;
 			}
+			// If this is caught, the user entered invalid data into some of the fields that will parse
 			catch (Exception exception)
 			{
 				MessageBox.Show(
@@ -52,6 +56,5 @@ namespace DVGB07_viktlund104_Laboration4_Store
 			this.DialogResult = DialogResult.Cancel;
 			this.Close();
 		}
-		
 	}
 }

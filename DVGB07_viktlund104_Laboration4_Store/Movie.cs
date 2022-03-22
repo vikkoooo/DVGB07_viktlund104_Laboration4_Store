@@ -12,6 +12,7 @@
 		public string Format { get; set; }
 		public int PlayingTime { get; set; }
 		
+		// Constructor for a new movie
 		public Movie()
 		{
 			// Get unique ID
@@ -19,14 +20,15 @@
 			FileHandler.IdGenerator++;
 		}
 		
+		// This constructor will be used when loading from file and want to assign ID ourselves
 		public Movie(int id)
 		{
 			Id = id;
 		}
-		
+
 		public override string ToString()
 		{
-			return $"Id: {Id}, Name: {Name}, Price: {Price}, Format: {Format}, Playing time: {PlayingTime}";
+			return $"Quantity: {Quantity}, Id: {Id}, Name: {Name}, Price: {Price}, Format: {Format}, PlayingTime: {PlayingTime}";
 		}
 	}
 }

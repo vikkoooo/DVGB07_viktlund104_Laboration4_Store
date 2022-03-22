@@ -6,7 +6,8 @@ namespace DVGB07_viktlund104_Laboration4_Store
 	public partial class EditGameForm : Form
 	{
 		private Game game;
-		
+
+		// Initializes the form and sets the field with the loaded data
 		public EditGameForm(Game game_)
 		{
 			InitializeComponent();
@@ -19,6 +20,9 @@ namespace DVGB07_viktlund104_Laboration4_Store
 			platformTextBox.Text = game.Platform;
 		}
 
+		/*
+		 * EVENTS
+		 */
 		private void okButton_Click(object sender, EventArgs e)
 		{
 			try
@@ -29,6 +33,7 @@ namespace DVGB07_viktlund104_Laboration4_Store
 				game.Price = double.Parse(priceTextBox.Text);
 				game.Platform = platformTextBox.Text;
 			}
+			// If this is caught, the user entered invalid data into some of the fields that will parse
 			catch (Exception exception)
 			{
 				MessageBox.Show(
@@ -38,7 +43,7 @@ namespace DVGB07_viktlund104_Laboration4_Store
 			}
 
 			this.DialogResult = DialogResult.OK;
-			this.Close();		
+			this.Close();
 		}
 
 		private void cancelButton_Click(object sender, EventArgs e)

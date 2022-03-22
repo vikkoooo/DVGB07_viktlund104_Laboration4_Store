@@ -1,19 +1,20 @@
-﻿using System;
-using System.ComponentModel;
-using System.IO;
-using System.Runtime.Serialization;
-using System.Windows.Forms;
+﻿using System.ComponentModel;
 using System.Xml;
 
 namespace DVGB07_viktlund104_Laboration4_Store
 {
+	/*
+	 * This class will write and read from xml files
+	 */
 	public class FileHandler
 	{
+		// Our databases. One per data type
 		public BindingList<Book> BookList { get; private set; }
 		public BindingList<Game> GameList { get; private set; }
 		public BindingList<Movie> MovieList { get; private set; }
-		public static int IdGenerator = 1;
+		public static int IdGenerator = 1; // Used to generate a unique ID for every item
 
+		// Constructor
 		public FileHandler()
 		{
 			// Initialize lists
@@ -21,7 +22,7 @@ namespace DVGB07_viktlund104_Laboration4_Store
 			GameList = new BindingList<Game>();
 			MovieList = new BindingList<Movie>();
 			
-			// Dummy data dev
+			// Dummy data dev (use this if loading from file fails for some reason)
 			// BookList.Add(new Book() { Name = "Bello Gallico et Civili", Price = 449, Author = "Julius Caesar", Genre = "Historia", Format = "Inbunden", Language = "Latin" });
 			// BookList.Add(new Book() { Name = "How to Read a Book", Price = 149, Author = "Mortimer J. Adler", Genre = "Kursliteratur", Format = "Pocket" });
 			// BookList.Add(new Book() { Name = "Moby Dick", Price = 49, Author = "Herman Melville", Genre = "Historia", Format = "Pocket" });
@@ -41,6 +42,32 @@ namespace DVGB07_viktlund104_Laboration4_Store
 			// MovieList.Add(new Movie() { Name = "Schindlers list", Price = 99, Format = "DVD" });
 		}
 
+		// Save method will call our specific save functions
+		public void Save()
+		{
+			SaveBooks();
+			SaveGames();
+			SaveMovies();
+			SaveIdGenerator();
+		}
+		
+		// To save books. CreateElement will open block <xxx>, AppendChild will close block. </xxx>
+		// So we will create a document which will look like this
+		// <BookDatabase>
+		// <book>
+		// <quantity>xx</quantity>
+		// <id>xx</id>
+		// <name>xx</name>
+		// <price>xx</price>
+		// <author>xx</author>
+		// <genre>xx</genre>
+		// <format>xx</format>
+		// <language>xx</language>
+		// </book>
+		// <book>
+		// next book information, until no more books
+		// </book>
+		// </BookDataBase>
 		private void SaveBooks()
 		{
 			XmlDocument doc = new XmlDocument();
@@ -49,9 +76,9 @@ namespace DVGB07_viktlund104_Laboration4_Store
 			{
 				XmlElement elem = doc.CreateElement("book"); // <book>
 				
-				XmlElement quantity = doc.CreateElement("quantity");
+				XmlElement quantity = doc.CreateElement("quantity"); // <quantity>
 				quantity.InnerText = entry.Quantity.ToString();
-				elem.AppendChild(quantity);
+				elem.AppendChild(quantity); // </quantity>
 
 				XmlElement id = doc.CreateElement("id");
 				id.InnerText = entry.Id.ToString();
@@ -87,6 +114,7 @@ namespace DVGB07_viktlund104_Laboration4_Store
 			doc.Save("booksDB.xml");
 		}
 		
+		// To save games
 		private void SaveGames()
 		{
 			XmlDocument doc = new XmlDocument();
@@ -121,6 +149,7 @@ namespace DVGB07_viktlund104_Laboration4_Store
 			doc.Save("gamesDB.xml");
 		}
 		
+		// To save movies
 		private void SaveMovies()
 		{
 			XmlDocument doc = new XmlDocument();
@@ -159,6 +188,7 @@ namespace DVGB07_viktlund104_Laboration4_Store
 			doc.Save("moviesDB.xml");
 		}
 
+		// This method will save the current idGenerator value
 		private void SaveIdGenerator()
 		{
 			XmlDocument doc = new XmlDocument();
@@ -169,15 +199,16 @@ namespace DVGB07_viktlund104_Laboration4_Store
 			doc.Save("IdGenerator.xml");
 		}
 
-		public void Save()
+		// Will call our specific load functions
+		public void Load()
 		{
-			SaveBooks();
-			SaveGames();
-			SaveMovies();
-			SaveIdGenerator();
+			LoadBooks();
+			LoadGames();
+			LoadMovies();
+			LoadIdGenerator();
 		}
 		
-		public void LoadBooks()
+		private void LoadBooks()
 		{
 			XmlDocument document = new XmlDocument();
 			document.Load("booksDB.xml");
@@ -210,7 +241,7 @@ namespace DVGB07_viktlund104_Laboration4_Store
 			}
 		}
 		
-		public void LoadGames()
+		private void LoadGames()
 		{
 			XmlDocument document = new XmlDocument();
 			document.Load("gamesDB.xml");
@@ -237,7 +268,7 @@ namespace DVGB07_viktlund104_Laboration4_Store
 			}
 		}
 		
-		public void LoadMovies()
+		private void LoadMovies()
 		{
 			XmlDocument document = new XmlDocument();
 			document.Load("moviesDB.xml");
@@ -266,6 +297,8 @@ namespace DVGB07_viktlund104_Laboration4_Store
 			}
 		}
 
+		// This method will load our previous saved idGenerator value, so when we launch the application we continue
+		// on the same id as we had before shutdown
 		private void LoadIdGenerator()
 		{
 			XmlDocument document = new XmlDocument();
@@ -275,12 +308,5 @@ namespace DVGB07_viktlund104_Laboration4_Store
 			IdGenerator = int.Parse(root.InnerText);
 		}
 		
-		public void Load()
-		{
-			LoadBooks();
-			LoadGames();
-			LoadMovies();
-			LoadIdGenerator();
-		}
 	}
 }

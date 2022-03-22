@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace DVGB07_viktlund104_Laboration4_Store
@@ -14,6 +7,7 @@ namespace DVGB07_viktlund104_Laboration4_Store
 	{
 		private FileHandler db;
 		
+		// Constructor
 		public MainForm()
 		{
 			InitializeComponent();
@@ -23,6 +17,12 @@ namespace DVGB07_viktlund104_Laboration4_Store
 			db.Load();
 		}
 
+		/*
+		 * EVENTS
+		 */
+		// This event will be triggered when the form is loaded, after the constructor.
+		// This has to be done in this order, because we have to have the database already initialized and loaded
+		// before we can use it to something. If this code would have been in the constructor, we can have random crash
 		private void MainForm_Load(object sender, EventArgs e)
 		{
 			// Add StockControl to stock tab in MainForm
@@ -36,6 +36,7 @@ namespace DVGB07_viktlund104_Laboration4_Store
 			salesTab.Controls.Add(sales);
 		}
 
+		// Event will be triggered every time the program closes. In other words, save on exit.
 		private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
 		{
 			db.Save();
