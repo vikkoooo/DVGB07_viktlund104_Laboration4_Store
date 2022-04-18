@@ -363,7 +363,6 @@ namespace DVGB07_viktlund104_Laboration4_Store
 			this.clearShipmentButton.TabIndex = 100;
 			this.clearShipmentButton.Text = "Clear Shipment";
 			this.clearShipmentButton.UseVisualStyleBackColor = true;
-			this.clearShipmentButton.Click += new System.EventHandler(this.clearShipmentButton_Click);
 			// 
 			// StockControl
 			// 

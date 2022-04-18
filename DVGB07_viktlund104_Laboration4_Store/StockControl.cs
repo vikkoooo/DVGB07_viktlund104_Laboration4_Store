@@ -11,12 +11,14 @@ namespace DVGB07_viktlund104_Laboration4_Store
 		private Game selectedGame;
 		private Movie selectedMovie;
 		private Dictionary<int, int> shipmentList; // Key is ID, value is quantity
+		private MainForm mainForm; // reference to mainform
 
 		// Constructor initializes our components and data
-		public StockControl(FileHandler db)
+		public StockControl(FileHandler db, MainForm mainForm)
 		{
 			InitializeComponent();
 			shipmentList = new Dictionary<int, int>();
+			this.mainForm = mainForm;
 
 			// Initialize our BindingSources to GridViews
 			bookSource = new BindingSource();
@@ -122,6 +124,7 @@ namespace DVGB07_viktlund104_Laboration4_Store
 			if (dialogResult == DialogResult.OK)
 			{
 				bookSource.Add(newBookForm.Book);
+				mainForm.ForceUpdateSales();
 			}
 		}
 
@@ -132,6 +135,7 @@ namespace DVGB07_viktlund104_Laboration4_Store
 			editBookForm.ShowDialog();
 
 			bookSource.ResetCurrentItem(); // Update UI
+			mainForm.ForceUpdateSales();
 		}
 
 		private void deleteBookButton_Click(object sender, EventArgs e)
@@ -142,6 +146,7 @@ namespace DVGB07_viktlund104_Laboration4_Store
 			if (result == DialogResult.Yes)
 			{
 				bookSource.Remove(selectedBook);
+				mainForm.ForceUpdateSales();
 			}
 		}
 
@@ -157,6 +162,7 @@ namespace DVGB07_viktlund104_Laboration4_Store
 			if (dialogResult == DialogResult.OK)
 			{
 				gameSource.Add(newGameForm.Game);
+				mainForm.ForceUpdateSales();
 			}
 		}
 
@@ -167,6 +173,7 @@ namespace DVGB07_viktlund104_Laboration4_Store
 			editGameForm.ShowDialog();
 
 			gameSource.ResetCurrentItem();
+			mainForm.ForceUpdateSales();
 		}
 
 		private void deleteGameButton_Click(object sender, EventArgs e)
@@ -177,6 +184,7 @@ namespace DVGB07_viktlund104_Laboration4_Store
 			if (result == DialogResult.Yes)
 			{
 				gameSource.Remove(selectedGame);
+				mainForm.ForceUpdateSales();
 			}
 		}
 
@@ -192,6 +200,7 @@ namespace DVGB07_viktlund104_Laboration4_Store
 			if (dialogResult == DialogResult.OK)
 			{
 				movieSource.Add(newMovieForm.Movie);
+				mainForm.ForceUpdateSales();
 			}
 		}
 
@@ -202,6 +211,7 @@ namespace DVGB07_viktlund104_Laboration4_Store
 			editMovieForm.ShowDialog();
 
 			movieSource.ResetCurrentItem();
+			mainForm.ForceUpdateSales();
 		}
 
 		private void deleteMovieButton_Click(object sender, EventArgs e)
@@ -212,6 +222,7 @@ namespace DVGB07_viktlund104_Laboration4_Store
 			if (result == DialogResult.Yes)
 			{
 				movieSource.Remove(selectedMovie);
+				mainForm.ForceUpdateSales();
 			}
 		}
 
@@ -268,7 +279,7 @@ namespace DVGB07_viktlund104_Laboration4_Store
 
 			UpdateShippingUI();
 		}
-		
+
 		private void cancelProductShipmentButton_Click(object sender, EventArgs e)
 		{
 			itemIdShipmentTextBox.Text = "";
@@ -313,12 +324,13 @@ namespace DVGB07_viktlund104_Laboration4_Store
 			bookDataGridView.Refresh();
 			gameDataGridView.Refresh();
 			movieDataGridView.Refresh();
+			mainForm.ForceUpdateSales();
 
 			// Clear shipment data
 			shipmentListBox.Items.Clear();
 			shipmentList.Clear();
 		}
-		
+
 		private void clearShipmentButton_Click(object sender, EventArgs e)
 		{
 			shipmentListBox.Items.Clear();

@@ -202,6 +202,22 @@ namespace DVGB07_viktlund104_Laboration4_Store
 
 			return false;
 		}
+		
+		// Clears temp sources and loads it again from original sources
+		public void ForceUpdate()
+		{
+			bookTempSource.Clear();
+			bookTempSource = AddBooksWithQuantity(bookSource);
+			bookDataGridView.DataSource = bookTempSource;
+
+			gameTempSource.Clear();
+			gameTempSource = AddGamesWithQuantity(gameSource);
+			gameDataGridView.DataSource = gameTempSource;
+
+			movieTempSource.Clear();
+			movieTempSource = AddMoviesWithQuantity(movieSource);
+			movieDataGridView.DataSource = movieTempSource;
+		}
 
 		/*
 		 * EVENTS
